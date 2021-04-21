@@ -1,1 +1,0 @@
-delete after putting files in components folder
