@@ -16,6 +16,8 @@ import profileIcon from "./resources/tabBar/profileIcon.svg";
 import profilePressed from "./resources/tabBar/profilePressed.svg";
 import Register from "./components/Register";
 
+import "./css/style.css";
+
 function App() {
   return <Home {...homeData} />;
 }
