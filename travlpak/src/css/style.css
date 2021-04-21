@@ -417,7 +417,7 @@
   font-family: "SF Pro Text-Regular";
   font-style: normal;
   font-weight: 400;
-  src: url("./resources/sf-pro-text-regular.otf") format("opentype");
+  src: url("../resources/sf-pro-text-regular.otf") format("opentype");
 }
 * {
   box-sizing: border-box;
