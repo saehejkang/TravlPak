@@ -1,5 +1,4 @@
 import React from 'react';
-import './style.css';
 
 import map from './resources/map.svg';
 import pictureFrame from './resources/pictureFrame.svg';
@@ -14,6 +13,8 @@ import connectIcon from './resources/tabBar/connectIcon.svg';
 import planIcon from './resources/tabBar/planIcon.svg';
 import profileIcon from './resources/tabBar/profileIcon.svg';
 import profilePressed from './resources/tabBar/profilePressed.svg';
+
+import './css/style.css';
 
 function App() {
   return <Home {...homeData} />;
