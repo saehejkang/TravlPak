@@ -1,5 +1,4 @@
-import React from 'react';
-import './style.css';
+import './SearchPreferences.css';
 
 import whiteBackground from './resources/whiteBackground.svg';
 import dotsStarsBackground from './resources/dotsStars.svg';
@@ -10,12 +9,6 @@ import profileIcon from './resources/tabBar/profileIcon.svg';
 import profilePressed from './resources/tabBar/profilePressed.svg';
 import scooterImg from './resources/scooter.svg';
 import xIcon from './resources/exitIcon.svg';
-
-function App() {
-  return <SearchPreferences />;
-}
-
-export default App;
 
 function SearchPreferences() {
   return (
