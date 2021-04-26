@@ -67,3 +67,4 @@ node_modules/
 *.swp
 *.swn
 *.swo
+/node_modules
