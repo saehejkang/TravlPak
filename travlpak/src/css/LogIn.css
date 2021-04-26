@@ -1,0 +1,134 @@
+.sign-in-page {
+  position: relative;
+  width: 414px;
+  height: 896px;
+  background: #FFFFFF
+}
+.travlpak-logo {
+  position: absolute;
+  width: 275px;
+  height: 57px;
+  left: 69px;
+  top: 56px;  
+}
+.car-illustration {
+  position: absolute;
+  left: 2.42%;
+  right: 2.37%;
+  top: 15.29%;
+  bottom: 59.6%;
+}
+.sign-in {
+  position: absolute;
+  left: 40.34%;
+  right: 40.1%;
+  top: 400px;
+  bottom: 50%;
+  
+  font-family: SF Pro Text;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+  /* identical to box height */
+  
+  color: #424D47;
+}
+.username-box {
+  position: absolute;
+  width: 328px;
+  height: 45px;
+  left: 43px;
+  top: 475px;
+
+  border: 1px solid #BDCAC2;
+  box-sizing: border-box;
+  border-radius: 27px;
+}
+.username {
+  position: absolute;
+  width: 60px;
+  height: 21px;
+  left: 31px;
+  top: 11px;
+  
+  font-family: SF Pro Display;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  
+  color: #E5E5E5;  
+}
+.password-box {
+  position: absolute;
+  width: 328px;
+  height: 45px;
+  left: 43px;
+  top: 540px;
+
+  border: 1px solid #BDCAC2;
+  box-sizing: border-box;
+  border-radius: 27px;
+}
+.password {
+  position: absolute;
+  width: 101px;
+  height: 21px;
+  left: 31px;
+  top: 11px;
+  
+  font-family: SF Pro Display;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  
+  color: #E5E5E5;
+}
+.prompt {
+  position: absolute;
+  height: 40px;
+  left: 19.08%;
+  right: 18.84%;
+  top: 606px;
+  
+  font-family: SF Pro Text;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  /* or 143% */
+  
+  text-align: center;
+  
+  color: #BFC0C0;  
+}
+.continue-button {
+  position: absolute;
+  width: 328px;
+  height: 45px;
+  left: 43px;
+  top: 708px;  
+}
+.or-divider {
+  position: absolute;
+  width: 328px;
+  height: 14px;
+  left: 43px;
+  top: 782px;
+}
+.create-account {
+  position: absolute;
+  width: 128px;
+  height: 21px;
+  left: 143px;
+  top: 825px;
+  
+  font-family: SF Pro Display;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 21px;
+  
+  color: #DE7A54;
+}
