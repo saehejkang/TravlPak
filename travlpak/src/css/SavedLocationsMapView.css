@@ -1,292 +1,38 @@
-.background {
-  align-items: flex-start;
-  display: flex;
-  height: 896px;
-  left: 0px;
-  min-width: 416px;
-  position: absolute;
-  top: 0px;
-}
-.profile-icon {
-  height: 24px;
-  margin-top: 0.0px;
-  width: 24px;
-}
-.dots-stars {
-  height: 119px;
-  left: 3px;
-  position: absolute;
-  top: 6px;
-  width: 412px;
-}
-.green {
-  background-color: var(--stromboli);
-  height: 896px;
-  left: 0px;
-  position: absolute;
-  top: 0px;
-  width: 414px;
-}
-.tab-pressed {
-  align-items: center;
-  align-self: center;
-  background-size: 100% 100%;
-  display: flex;
-  height: 40px;
-  margin-left: 37px;
-  padding: 0 12px;
-  width: 112px;
-}
-.group-1 {
-  align-items: flex-start;
-  display: flex;
-  height: 36px;
-  justify-content: center;
-  left: 34px;
-  overflow: hidden;
-  position: absolute;
-  top: 0px;
-  width: 125px;
-}
-.list-view {
-  color: var(--powder-ash);
-  font-family: 'SF Pro Text-Medium', Helvetica;
-  font-size: 16px;
-  font-weight: 500;
-  left: 232px;
-  letter-spacing: 0.00px;
-  line-height: 24px;
-  position: absolute;
-  text-align: center;
-  top: 15px;
-  white-space: nowrap;
-}
 .map {
-  align-items: flex-start;
-  display: flex;
+  position: absolute;
+  width: 366px;
   height: 488px;
   left: 24px;
-  min-width: 370px;
-  position: absolute;
-  top: 250px;
-}
-.map-view {
-  letter-spacing: 0.00px;
-  line-height: 24px;
-  min-height: 24px;
-  min-width: 79px;
-  text-align: center;
-  white-space: nowrap;
-}
-.oval {
-  height: 8px;
-  left: 93px;
-  position: absolute;
-  top: 42px;
-  width: 8px;
-}
-.overlap-group {
-  height: 896px;
-  position: relative;
-  width: 416px;
-}
-.overlap-group1 {
-  height: 49px;
-  left: 0px;
-  position: absolute;
-  top: 0px;
-  width: 177px;
-}
-.overlap-group1-1 {
-  align-items: center;
-  background-color: var(--stromboli);
-  border-radius: 18px;
-  display: flex;
-  height: 38px;
-  justify-content: flex-end;
-  margin-top: -1px;
-  min-width: 127px;
-  padding: 0 23px;
-}
-.white-box {
-  align-items: flex-start;
-  background-color: var(--white);
-  border-radius: 20px;
-  box-shadow: 0px 4px 10px rgba(0,0,0,0.12);;
-  display: flex;
-  height: 74px;
-  margin-top: -1px;
-  min-width: 344px;
-}
-.tab-not-pressed {
-  height: 49px;
-  margin-top: -0.25px;
-  position: relative;
-  width: 177px;
-}
-.map2 {
-  align-items: flex-start;
-  background-size: 100% 100%;
-  display: flex;
-  height: 488px;
-  min-width: 366px;
-  padding: 141px 47px;
-}
-.overlap-group5 {
-  height: 50px;
-  margin-left: -1px;
-  position: relative;
-  width: 344px;
-}
-.profile {
-  letter-spacing: 0.00px;
-  line-height: 24px;
-  margin-left: 8px;
-  min-height: 24px;
-  min-width: 54px;
-  text-align: center;
-  white-space: nowrap;
-}
-.rectangle {
-  background-color: var(--white);
-  border: 1px solid var(--powder-ash);
-  border-radius: 20px;
-  height: 40px;
-  left: 0px;
-  position: absolute;
-  top: 7px;
-  width: 344px;
-}
-.saved-locations-map-view {
-  align-items: flex-start;
-  background-color: var(--white);
-  display: flex;
-  overflow: hidden;
-  width: 414px;
+  top: 250px;  
 }
 .selection-bar {
-  align-items: flex-start;
-  display: flex;
-  height: 50px;
+  position: absolute;
   left: 36px;
-  min-width: 344px;
+  right: 36px;
+  top: 168px;
+  bottom: 690px;
+}
+.map-selected {
   position: absolute;
+  left: 69px;
+  right: 220px;
   top: 160px;
+  bottom: 686px;  
 }
-.span0 {
-  color: rgba(222,122,84,1.0);
-  font-family: 'SF Pro Display-Regular', Helvetica;
-  font-size: 18px;
-}
-.span1 {
-  color: rgba(0,0,0,1.0);
-  font-family: 'SF Pro Display-Regular', Helvetica;
-  font-size: 18px;
-}
-.tab-bar {
-  align-items: flex-start;
-  display: flex;
-  height: 72px;
-  justify-content: center;
-  margin-top: 37px;
-  min-width: 342px;
-}
-.text-1 {
-  align-self: flex-end;
-  letter-spacing: 0.00px;
-  margin-left: 121px;
-  min-height: 28px;
-  width: 26px;
-}
-.text-2 {
-  letter-spacing: 0.00px;
-  margin-top: 22px;
-  min-height: 28px;
-  width: 26px;
-}
-.title {
-  color: var(--white);
-  font-family: 'SF Pro Display-Semibold', Helvetica;
-  font-size: 24px;
-  left: 100px;
-  letter-spacing: 0.00px;
+.list-view {
   position: absolute;
-  top: 57px;
-}
-.plan-icon {
-  height: 26px;
-  left: 152px;
-  position: absolute;
-  top: 24px;
-  width: 26px;
-}
-.connect-icon {
-  height: 21px;
-  left: 92px;
-  position: absolute;
-  top: 26px;
-  width: 25px;
-}
-.explore-icon {
   height: 24px;
-  left: 30px;
-  position: absolute;
-  top: 24px;
-  width: 24px;
-}
-.white {
-  height: 764px;
-  left: 0px;
-  position: absolute;
-  top: 132px;
-  width: 414px;
-}
-.x {
-  height: 24px;
-  left: 351px;
-  position: absolute;
-  top: 56px;
-  width: 24px;
-}
-@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
-@font-face {
-  font-family: "SF Pro Display-Regular";
-  font-style: normal;
-  font-weight: 400;
-  src: url("./resources/sf-pro-display-regular.otf") format("opentype");
-}
-
-@font-face {
-  font-family: "SF Pro Text-Medium";
+  left: 267px;
+  top: 176px;
+  
+  font-family: SF Pro Text;
   font-style: normal;
   font-weight: 500;
-  src: url("./resources/sf-pro-text-medium.ttf") format("truetype");
-}
-* {
-  box-sizing: border-box;
-}
-.sfprodisplay-regular-normal-white-18px {
-  font-family: var(--font-family-sf_pro_display-regular);
-  font-size: var(--font-size-l);
-  font-style: normal;
-  font-weight: 400;
-}
-.sfprotext-normal-white-16px {
-  color: var(--white);
-  font-family: var(--font-family-sf_pro_text-semibold);
-  font-size: var(--font-size-m);
-  font-style: normal;
-  font-weight: 400;
-}
-:root {
-  --font-family-sf_pro_display-regular: "SF Pro Display-Regular", Helvetica;
-  --font-family-sf_pro_display-semibold: "SF Pro Display-Semibold", Helvetica;
-  --font-family-sf_pro_text-medium: "SF Pro Text-Medium", Helvetica;
-  --font-family-sf_pro_text-semibold: "SF Pro Text-Semibold", Helvetica;
-  --font-size-l: 18px;
-  --font-size-m: 16px;
-  --font-size-xl: 24px;
-  --powder-ash: rgba(189, 202, 194, 1);
-  --stromboli: rgba(42, 96, 73, 1);
-  --white: rgba(255, 255, 255, 1);
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height, or 150% */
+  
+  text-align: center;
+  
+  color: #BDCAC2;  
 }
