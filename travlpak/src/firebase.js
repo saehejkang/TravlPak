@@ -1,23 +1,25 @@
-import firebase from "firebase/app";
-import "firebase/auth";
-import "firebase/firestore";
+import firebase from "firebase/app"
+//require("firebase/firestore");
+require("firebase/auth");
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
 const firebaseConfig = {
-   apiKey: process.env.REACT_APP_API_KEY,
-   authDomain: process.env.REACT_APP_AUTHDOMAIN,
-   databaseURL: process.env.REACT_APP_BASEURL,
-   projectId: process.env.REACT_APP_PROJECT_ID,
-   storageBucket: process.env.REACT_APP_STORAGEBUCKET,
-   messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
-   appId: process.env.REACT_APP_APP_ID,
-   measurementId: process.env.REACT_APP_MEASUREMENT_ID
-};
-
+   apiKey: "AIzaSyD9blbY5AZe2ymhDm3xpSN-0UUkcSvo1i4",
+   authDomain: "travlpak-1cefc.firebaseapp.com",
+   databaseURL: "https://travlpak-1cefc-default-rtdb.firebaseio.com",
+   projectId: "travlpak-1cefc",
+   storageBucket: "travlpak-1cefc.appspot.com",
+   messagingSenderId: "88818827150",
+   appId: "1:88818827150:web:b3c0faf7000f0a5f062edf",
+   measurementId: "G-DKJ6GBC0Y1"
+ };
+console.log(firebaseConfig.apiKey)
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-firebase.analytics();
+var fire = firebase.initializeApp(firebaseConfig);
 
-export const auth = firebase.auth();
-export const firestore = firebase.firestore();
+//var db = firebase.firestore();
+//var users = db.collection("Users");
+
+export default fire;
