@@ -1,3 +1,6 @@
+::placeholder {
+  color: #E5E5E5 !important;
+}
 .sign-in-page {
   position: relative;
   width: 414px;
@@ -34,31 +37,25 @@
   
   color: #424D47;
 }
-.username-box {
+.email-box {
   position: absolute;
   width: 328px;
   height: 45px;
   left: 43px;
   top: 475px;
-
-  border: 1px solid #BDCAC2;
-  box-sizing: border-box;
-  border-radius: 27px;
-}
-.username {
-  position: absolute;
-  width: 60px;
-  height: 21px;
-  left: 31px;
-  top: 11px;
+  padding-left: 31px;
+  padding-right: 31px;
   
   font-family: SF Pro Display;
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
   line-height: 21px;
-  
-  color: #E5E5E5;  
+
+  border: 1px solid #BDCAC2;
+  box-sizing: border-box;
+  border-radius: 27px;
+  color: #424D47;
 }
 .password-box {
   position: absolute;
@@ -66,25 +63,19 @@
   height: 45px;
   left: 43px;
   top: 540px;
-
-  border: 1px solid #BDCAC2;
-  box-sizing: border-box;
-  border-radius: 27px;
-}
-.password {
-  position: absolute;
-  width: 101px;
-  height: 21px;
-  left: 31px;
-  top: 11px;
+  padding-left: 31px;
+  padding-right: 31px;
   
   font-family: SF Pro Display;
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
   line-height: 21px;
-  
-  color: #E5E5E5;
+
+  border: 1px solid #BDCAC2;
+  box-sizing: border-box;
+  border-radius: 27px;
+  color: #424D47;
 }
 .prompt {
   position: absolute;

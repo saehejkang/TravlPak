@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { Form, Button } from "react-bootstrap";
+import { Form } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "../css/Register.css";
 
 class Register extends Component {
@@ -66,7 +67,7 @@ class Register extends Component {
               onChange={(e) => this.setState({ password: e.target.value })}
             />
           </Form.Group>
-          <Button
+          <Link to={"/registerSuccess"}
             block
             size="lg"
             className="btn btn-success"
@@ -74,7 +75,7 @@ class Register extends Component {
             disabled={!this.validateForm()}
           >
             Login
-          </Button>
+          </Link>
         </Form>
       </div>
     );
