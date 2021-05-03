@@ -1,3 +1,4 @@
+import firebase from "firebase";
 import React, { Component } from "react";
 import { Form } from "react-bootstrap";
 import { Button} from 'react-bootstrap';
@@ -22,8 +23,36 @@ class Register extends Component {
   }
 
   firebase_signup = () => {
+<<<<<<< HEAD
     let email = this.state.email
     let password  = this.state.password
+=======
+
+    let email = this.state.email
+    let password  = this.state.password
+    let lName = this.state.lastName
+    let fName = this.state.firstName
+
+    var db = fire.firestore();
+
+    db.collection("Users").add({
+      Email: email,
+      FirstName: fName,
+      LastName: lName
+    })
+    .then((docRef) => {
+      console.log("Document written with ID: ", docRef.id);
+    })
+    .catch((error) => {
+      console.error("Error adding document: ", error);
+   });
+
+    db.collection("Users").get().then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+        console.log(`${doc.id} => ${doc.data()}`);
+    });
+  });
+>>>>>>> 6ee403f3ed5feeeb51f0ef89e0a99e8119a4906c
     console.log(email + " " + password)
     fire.auth().createUserWithEmailAndPassword(email, password)
     .then((userCredential) => {

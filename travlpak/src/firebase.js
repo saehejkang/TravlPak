@@ -8,7 +8,11 @@ require("firebase/auth");
 const firebaseConfig = {
    apiKey: "AIzaSyD9blbY5AZe2ymhDm3xpSN-0UUkcSvo1i4",
    authDomain: "travlpak-1cefc.firebaseapp.com",
+<<<<<<< HEAD
    databaseURL: "https://travlpak-1cefc-default-rtdb.firebaseio.com",
+=======
+   databaseURL: "https://travlpak-1cefc-default-rtdb.firebaseio.com/",
+>>>>>>> 6ee403f3ed5feeeb51f0ef89e0a99e8119a4906c
    projectId: "travlpak-1cefc",
    storageBucket: "travlpak-1cefc.appspot.com",
    messagingSenderId: "88818827150",
