@@ -1,4 +1,3 @@
-import firebase from "firebase";
 import React, { Component } from "react";
 import { Form } from "react-bootstrap";
 import { Button} from 'react-bootstrap';
@@ -23,10 +22,6 @@ class Register extends Component {
   }
 
   firebase_signup = () => {
-<<<<<<< HEAD
-    let email = this.state.email
-    let password  = this.state.password
-=======
 
     let email = this.state.email
     let password  = this.state.password
@@ -52,7 +47,6 @@ class Register extends Component {
         console.log(`${doc.id} => ${doc.data()}`);
     });
   });
->>>>>>> 6ee403f3ed5feeeb51f0ef89e0a99e8119a4906c
     console.log(email + " " + password)
     fire.auth().createUserWithEmailAndPassword(email, password)
     .then((userCredential) => {
