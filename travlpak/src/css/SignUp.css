@@ -1,0 +1,86 @@
+.sign-up {
+  position: relative;
+  width: 414px;
+  height: 896px;
+  
+  background: #FFFFFF;
+}
+.create-account-icon {
+  position: absolute;
+  left: 123px;
+  right: 122px;
+  top: 60px;
+  bottom: 598px;
+}
+.exit-icon {
+  position: absolute;
+  width: 39px;
+  height: 39px;
+  left: 43px;
+  top: 56px;
+}
+.first-name-box {
+  position: absolute;
+  width: 328px;
+  height: 45px;
+  left: 43px;
+  top: 345px;
+  padding-left: 31px;
+  padding-right: 31px;
+  
+  font-family: SF Pro Display;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+
+  border: 1px solid #BDCAC2;
+  box-sizing: border-box;
+  border-radius: 27px;
+  color: #424D47;
+}
+.last-name-box {
+  position: absolute;
+  width: 328px;
+  height: 45px;
+  left: 43px;
+  top: 410px;
+  padding-left: 31px;
+  padding-right: 31px;
+  
+  font-family: SF Pro Display;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+
+  border: 1px solid #BDCAC2;
+  box-sizing: border-box;
+  border-radius: 27px;
+  color: #424D47;
+}
+.almost-there {
+  position: absolute;
+  height: 20px;
+  left: 164px;
+  right: 155px;
+  top: 636px;
+  
+  font-family: SF Pro Text;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  /* identical to box height, or 143% */
+  
+  text-align: center;
+  
+  color: #BFC0C0;
+}
+.sign-up-button {
+  position: absolute;
+  width: 328px;
+  height: 45px;
+  left: 43px;
+  top: 708px;  
+}
