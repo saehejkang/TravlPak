@@ -1,4 +1,3 @@
-import firebase from "firebase";
 import React, { Component } from "react";
 import { Form } from "react-bootstrap";
 import { Button} from 'react-bootstrap';
@@ -125,7 +124,7 @@ class Register extends Component {
               onChange={(e) => this.setState({ password: e.target.value })}
             />
           </Form.Group>
-          <Link to={"/registerSuccess"}
+          <Button
             block
             size="lg"
             className="btn btn-success"
@@ -133,7 +132,7 @@ class Register extends Component {
             disabled={!this.validateForm()}
           >
             Login
-          </Link>
+          </Button>
         </Form>
       </div>
     );
