@@ -9,10 +9,6 @@ import continueButton from "../resources/LogIn-Resources/continueButton.svg";
 import continueButtonDisabled from "../resources/LogIn-Resources/continueButtonDisabled.svg";
 import or from "../resources/LogIn-Resources/or.svg";
 import fire from '../firebase.js'
-// Notes: Error messages are not showing up. Not 100% sure why but
-// I believe it is due to:
-// {(this.validateForm() && this.isLoggedIn === true) ? "/home" : "/Login"
-// it refreshes the Login page so that the error message does not pop up
 
 class LogIn extends Component {
   state = {
@@ -36,7 +32,7 @@ class LogIn extends Component {
     this.setState( { isLoggedIn : true } );
   } 
 
-  firebase_signin = () => {
+  firebase_SignIn = () => {
     const email = this.state.email
     const password = this.state.password
 
@@ -66,6 +62,12 @@ class LogIn extends Component {
 }
 
   render() {
+    const { auth } = this.state.isLoggedIn
+    if (auth === true) {
+      return (
+        <Redirect to='/home' />
+      )
+    }
     return (
       <div class="sign-in-page">
         <img className="travlpak-logo" src={logo} alt="travlpak logo" />
@@ -76,9 +78,8 @@ class LogIn extends Component {
 
         <input placeholder="•••••••••••••" className="password-box" type="password" value={this.password} onChange={(e) => this.setState({ password: e.target.value })}/>
 
-        <Link to={(this.validateForm() && this.isLoggedIn === true) ? "/home" : "/Login"}>
-          <img className="continue-button" src={this.validateForm() ? continueButton : continueButtonDisabled} alt="continue button"/>
-        </Link>
+        <img className="continue-button" src={this.validateForm() ? continueButton : continueButtonDisabled} alt="continue button" onClick={this.validateForm() ? this.firebase_SignIn : null}/>
+      
 
         <p className="prompt">please enter your email and password in the fields above</p>
         <img className="or-divider" src={or} alt="or divider" />
