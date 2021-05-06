@@ -32,34 +32,14 @@ class SignUp extends Component {
   firebase_signup = () => {
     let email = this.state.email
     let password  = this.state.password
-    let lName = this.state.lastName
-    let fName = this.state.firstName
-
-    var db = fire.firestore();
-
-    db.collection("Users").add({
-      Email: email,
-      FirstName: fName,
-      LastName: lName
-    })
-    .then((docRef) => {
-      console.log("Document written with ID: ", docRef.id);
-    })
-    .catch((error) => {
-      console.error("Error adding document: ", error);
-   });
-
-    db.collection("Users").get().then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-        console.log(`${doc.id} => ${doc.data()}`);
-    });
-  });
+    
     console.log(email + " " + password)
     fire.auth().createUserWithEmailAndPassword(email, password)
     .then((userCredential) => {
         // Signed in 
         var user = userCredential.user;
         // Send verification email
+        this.firebase_addUser(email);
         this.firebase_sendVerification(user);
         this.setState({verified: true})
     })
@@ -85,6 +65,31 @@ class SignUp extends Component {
         alert(errorMessage);
         console.log(error);
     });
+  }
+
+  firebase_addUser = (email) => {
+    let lName = this.state.lastName
+    let fName = this.state.firstName
+
+    var db = fire.firestore();
+
+    db.collection("Users").add({
+      Email: email,
+      FirstName: fName,
+      LastName: lName
+    })
+    .then((docRef) => {
+      console.log("Document written with ID: ", docRef.id);
+    })
+    .catch((error) => {
+      console.error("Error adding document: ", error);
+   });
+
+    db.collection("Users").get().then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+        console.log(`${doc.id} => ${doc.data()}`);
+    });
+  });
   }
 
   render() {
