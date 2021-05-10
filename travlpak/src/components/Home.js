@@ -1,8 +1,9 @@
 import "../css/Home.css";
 import "../css/tabBarProfile.css";
 
-import { Link } from "react-router-dom";
+import { Link, Redirect, useParams } from "react-router-dom";
 import { Component } from "react";
+import fire from '../firebase.js'
 
 import map from "../resources/Home-Resources/map.svg";
 import menu from "../resources/Home-Resources/menu.svg";
@@ -21,10 +22,10 @@ import profilePressed from "../resources/tabBar-Resources/profilePressed.svg";
 
 class Home extends Component {
   state = {
-    name: "TravlPak",
-    aboutMeText: "I'm trying to make it to 100 countries!",
+    name: "",
+    aboutMeText: "",
     profilePictureImage: "https://images.unsplash.com/photo-1492693429561-1c283eb1b2e8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80",
-    greetingName: "TravlPak",
+    greetingName: "",
     friendRequestsNumber: "12",
     newMessagesNumber: "2",
     plannedTripsNumber: "1",
@@ -44,6 +45,40 @@ class Home extends Component {
     this.setState({menuOpen: false})
   }
 
+  async componentDidMount(){
+    this.isSignedIn()
+  }
+
+  isSignedIn() {
+      fire.auth().onAuthStateChanged(user => {
+        console.log(user)
+          if (user) {
+              var db = fire.firestore()
+              console.log(user)
+              db.collection("Users").onSnapshot(data => {
+                  this.getUserData(user)
+                  }, err => {
+                    console.lof(err)
+                  });
+              //call function here and pass in user which is the data
+          } else {
+              console.log('user signed out')
+          }
+      })
+  }
+
+  getUserData(user) {
+    var db = fire.firestore()
+    db.collection("Users").doc(user.uid).get().then(doc => {
+      console.log("data " + doc.data().FirstName)
+      this.setState({
+        name: doc.data().FirstName,
+        aboutMeText: doc.data().bio,
+        greetingName: doc.data().FirstName
+      })
+    })
+  }
+
   menu() {
     return (
       <div>
@@ -60,6 +95,7 @@ class Home extends Component {
   }
   
   render() {
+
     return (
       <div className="home">
         <img src={map} alt="map"/>

@@ -39,7 +39,7 @@ class SignUp extends Component {
         // Signed in 
         var user = userCredential.user;
         // Send verification email
-        this.firebase_addUser(email);
+        this.firebase_addUser(user);
         this.firebase_sendVerification(user);
         this.setState({verified: true})
     })
@@ -67,19 +67,23 @@ class SignUp extends Component {
     });
   }
 
-  firebase_addUser = (email) => {
+  firebase_addUser = (user) => {
     let lName = this.state.lastName
     let fName = this.state.firstName
 
     var db = fire.firestore();
 
-    db.collection("Users").add({
-      Email: email,
+    db.collection("Users").doc(user.uid).set({
+      Email: user.email,
       FirstName: fName,
-      LastName: lName
+      LastName: lName,
+      Location: "",
+      bio: "",
+      age: 0,
+      interests: []
     })
-    .then((docRef) => {
-      console.log("Document written with ID: ", docRef.id);
+    .then(() => {
+      console.log("Document written with ID: ", user.uid);
     })
     .catch((error) => {
       console.error("Error adding document: ", error);
@@ -90,7 +94,8 @@ class SignUp extends Component {
         console.log(`${doc.id} => ${doc.data()}`);
     });
   });
-  }
+  
+}
 
   render() {
     if (this.state.verified)
