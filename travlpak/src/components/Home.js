@@ -79,6 +79,15 @@ class Home extends Component {
     })
   }
 
+  signout(){
+    fire.auth().signOut().then(() => {
+      console.log("signed out")
+    }).catch((err) => {
+      console.log(err)
+    })
+
+  }
+
   menu() {
     return (
       <div>
@@ -88,7 +97,7 @@ class Home extends Component {
           <div className="search-preferences-text">search preferences</div>
         </Link>
         <Link to="/login">
-          <img className="logout" src={logoutIcon} alt="logout icon"/>
+          <img className="logout" src={logoutIcon} alt="logout icon" onClick={this.signout}/>
         </Link>
       </div>
     );
