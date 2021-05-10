@@ -26,13 +26,13 @@ class Home extends Component {
     aboutMeText: "",
     profilePictureImage: "https://images.unsplash.com/photo-1492693429561-1c283eb1b2e8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80",
     greetingName: "",
-    friendRequestsNumber: "12",
+    friendRequestsNumber: "2",
     newMessagesNumber: "2",
     plannedTripsNumber: "1",
-    tripsTakenNumber: "6",
+    tripsTakenNumber: "0",
     savedLocationsNumber: "2",
-    countriesTraveledNumber: "4",
-    flightsBoardedNumber: "9",
+    countriesTraveledNumber: "0",
+    flightsBoardedNumber: "0",
 
     menuOpen: false,
   };
