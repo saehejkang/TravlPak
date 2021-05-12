@@ -4,12 +4,10 @@ import { Link, Redirect } from "react-router-dom";
 import "../css/SignUp.css";
 
 import fire from '../firebase.js'
-
 import createAccIcon from "../resources/SignUp-Resources/createAccIcon.svg";
 import exitIcon from "../resources/SignUp-Resources/exitIcon.svg";
 import signUpButton from "../resources/SignUp-Resources/signUp.svg";
 import signUpButtonDisabled from "../resources/SignUp-Resources/signUpDisabled.svg";
-
 
 class SignUp extends Component {
   state = {
@@ -94,7 +92,25 @@ class SignUp extends Component {
         console.log(`${doc.id} => ${doc.data()}`);
     });
   });
-  
+    var file = "ProfilePictureTest.png";
+    var metadata = {
+      contentType: 'image/png',
+    };
+    var storageRef = fire.storage().ref().child("ProfilePictures/").child(file);
+    var task = storageRef.put(file,metadata);
+
+    task.on('state_changed',
+
+  function progress (snapshot){
+      console.log(snapshot.bytesTransferred)
+    },
+    function error(err){
+
+    },
+    function complete() {
+
+    }
+  );
 }
 
   render() {

@@ -1,4 +1,5 @@
 import firebase from "firebase/app"
+import 'firebase/storage'
 require("firebase/firestore");
 require("firebase/auth");
 require('dotenv').config()
