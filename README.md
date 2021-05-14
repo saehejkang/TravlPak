@@ -2,7 +2,7 @@ Welcome to the TravlPak App!
 
 Currently working on the intial release.
 
-Style guide: Javascript Standard Style [Javascript Standard Style](https://standardjs.com)
+Standard Style [Javascript Standard Style](https://standardjs.com)
 Linter: ESLint
 formatter: Prettier
 
