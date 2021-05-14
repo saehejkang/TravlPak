@@ -2,5 +2,9 @@ Welcome to the TravlPak App!
 
 Currently working on the intial release.
 
+Style guide: Javascript Standard Style [Javascript Standard Style](https://standardjs.com)
+Linter: ESLint
+formatter: Prettier
+
 System Architecture
 ![System Architecture](https://github.com/saehejkang/TravlPak/blob/master/UML%20Component%20Design.JPG)
