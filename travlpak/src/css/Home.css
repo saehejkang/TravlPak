@@ -10,7 +10,7 @@
   width: 41px;
   height: 21px;
   left: 36px;
-  top: 57px;
+  top: 264px;
   
   font-family: SF Pro Display;
   font-style: normal;
@@ -18,24 +18,22 @@
   font-size: 18px;
   line-height: 21px;
   
-  color: #424D47;  
+  color: #424D47; 
 }
 .name {
   position: absolute;
-  width: 93px;
-  height: 29px;
-  left: 36px;
-  top: 78px;
+  width: 140px;
+  height: 43px;
+  left: 35px;
+  top: 285px;
   
   font-family: SF Pro Display;
   font-style: normal;
   font-weight: bold;
-  font-size: 24px;
-  line-height: 29px;
-  /* identical to box height */
+  font-size: 36px;
+  line-height: 43px;
   
-  
-  color: #424D47;  
+  color: #424D47;    
 }
 .menu-icon {
   position: absolute;
@@ -44,75 +42,59 @@
   left: 346px;
   top: 57px;  
 }
-.picture-frame {
-  position: absolute;
-  width: 149.33px;
-  height: 157.89px;
-  left: 132px;
-  top: 103px;  
-}
-.circle {
-  position: absolute;
-  left: 160px;
-  top: 132px;
-
-}
 .profile-picture {
   position: absolute;
   width: 101px;
   height: 101px;
-  left: 162px;
-  top: 134px;
+  left: 277px;
+  top: 239px;
 
   border-radius: 100px;
 }
-.about-me {
+.home-location {
   position: absolute;
-  width: 85px;
-  height: 20px;
-  left: 37px;
-  top: 259px;
+  left: 36px;
+  top: 354px;
+  bottom: 522px;
   
   font-family: SF Pro Text;
   font-style: normal;
-  font-weight: bold;
+  font-weight: 600;
   font-size: 18px;
   line-height: 20px;
-  /* identical to box height, or 111% */
   
-  
-  color: #424D47;
+  color: #EC744A;
 }
 .bio {
   position: absolute;
-  width: 258px;
-  height: 20px;
-  left: 37px;
-  top: 279px;
+  left: 8.7%;
+  right: 8.7%;
+  top: 42.52%;
+  bottom: 50.78%;
   
   font-family: SF Pro Text;
   font-style: normal;
   font-weight: normal;
-  font-size: 13px;
+  font-size: 18px;
   line-height: 20px;
-  /* identical to box height, or 154% */
+  /* or 111% */
   
   
-  color: #424D47;
+  color: #BFC0C0;  
 }
 .three-boxes {
   position: absolute;
-  width: 341px;
-  height: 85px;
-  left: 36px;
-  top: 336px;  
+  width: 298px;
+  height: 40px;
+  left: 59px;
+  top: 506px;  
 }
 .friend-requests {
   position: absolute;
   height: 20px;
-  left: 18.36%;
-  right: 75.85%;
-  top: calc(50% - 20px/2 - 49px);
+  left: 14.49%;
+  right: 72.71%;
+  top: calc(50% - 20px/2 + 44px);
   
   font-family: SF Pro Text;
   font-style: normal;
@@ -121,15 +103,16 @@
   line-height: 20px;
   /* identical to box height, or 100% */
   
+  text-align: center;
   
-  color: #140C07;
+  color: #424D47;  
 }
-.new-messages {
+.unread-messages {
   position: absolute;
   height: 20px;
-  left: 48.31%;
-  right: 48.55%;
-  top: calc(50% - 20px/2 - 49px);
+  left: 43.24%;
+  right: 43.96%;
+  top: calc(50% - 20px/2 + 43px);
   
   font-family: SF Pro Text;
   font-style: normal;
@@ -138,15 +121,16 @@
   line-height: 20px;
   /* identical to box height, or 100% */
   
+  text-align: center;
   
-  color: #140C07;  
+  color: #424D47;  
 }
-.planned-trips {
+.trip-invitations {
   position: absolute;
   height: 20px;
-  left: 77.29%;
-  right: 20.05%;
-  top: calc(50% - 20px/2 - 49px);
+  left: 71.98%;
+  right: 15.22%;
+  top: calc(50% - 20px/2 + 43px);
   
   font-family: SF Pro Text;
   font-style: normal;
@@ -155,94 +139,76 @@
   line-height: 20px;
   /* identical to box height, or 100% */
   
+  text-align: center;
   
-  color: #140C07;
+  color: #424D47;  
 }
 .four-boxes {
   position: absolute;
-  width: 343px;
-  height: 283px;
-  left: 35px;
-  top: 458px;  
+  width: 382px;
+  height: 160px;
+  left: 16px;
+  top: 602px;  
 }
-.trips-taken {
+.connections {
   position: absolute;
-  width: 18px;
-  height: 29px;
-  left: 51px;
-  top: 520px;
+  left: 37.1px;
+  top: 71.21%;
+  bottom: 26.56%;
   
   font-family: SF Pro Text;
   font-style: normal;
-  font-weight: 800;
-  font-size: 24px;
-  line-height: 29px;
-  /* identical to box height */
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  /* identical to box height, or 143% */
   
+  color: #EC744A;  
+}
+.trips-planned {
+  position: absolute;
+  left: 222.8px;
+  top: 71.21%;
+  bottom: 26.56%;
   
-  color: #FFFFFF;  
+  font-family: SF Pro Text;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  /* identical to box height, or 143% */
+  
+  color: #EC744A;
 }
 .saved-locations {
   position: absolute;
-  width: 16px;
-  height: 29px;
-  left: 51px;
-  top: 669px;
+  left: 37.1px;
+  top: 80.13%;
+  bottom: 17.63%;
   
   font-family: SF Pro Text;
   font-style: normal;
-  font-weight: 800;
-  font-size: 24px;
-  line-height: 29px;
-  /* identical to box height */
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  /* identical to box height, or 143% */
   
-  
-  color: #FFFFFF;  
+  color: #EC744A;  
 }
-.saved-locations-clickable {
+.trips-taken {
   position: absolute;
-  width: 164px;
-  height: 134px;
-  left: 35px;
-  top: 607px;
-  
-  background: transparent;
-  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 20px;
-}
-.countries-traveled {
-  position: absolute;
-  width: 18px;
-  height: 29px;
-  left: 230px;
-  top: 520px;
+  left: 222.8px;
+  top: 80.13%;
+  bottom: 17.63%;
   
   font-family: SF Pro Text;
   font-style: normal;
-  font-weight: 800;
-  font-size: 24px;
-  line-height: 29px;
-  /* identical to box height */
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  /* identical to box height, or 143% */
   
-  
-  color: #FFFFFF;
-}
-.flights-boarded {
-  position: absolute;
-  width: 18px;
-  height: 29px;
-  left: 230px;
-  top: 669px;
-  
-  font-family: SF Pro Text;
-  font-style: normal;
-  font-weight: 800;
-  font-size: 24px;
-  line-height: 29px;
-  /* identical to box height */
-  
-  
-  color: #FFFFFF;
+  color: #EC744A;
 }
 .menu {
   position: absolute;
@@ -266,6 +232,22 @@
   height: 21px;
   right: 41px;
   top: 100px;
+  
+  font-family: SF Pro Display;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: right;
+  
+  color: #424D47;  
+}
+.account-settings-text {
+  position: absolute;
+  width: 145px;
+  height: 21px;
+  right: 41px;
+  top: 127px;
   
   font-family: SF Pro Display;
   font-style: normal;

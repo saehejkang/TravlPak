@@ -1,0 +1,54 @@
+.account-settings-title {
+    position: absolute;
+    left: 116px;
+    top: 57px;
+    
+    font-family: SF Pro Display;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    /* identical to box height */
+    
+    
+    color: #FFFFFF;
+}
+.change-birthday-password {
+    position: absolute;
+    width: 257px;
+    height: 273px;
+    left: 79px;
+    top: 168px;
+}
+.my-birthday-input {
+    position: absolute;
+    width: 155px;
+    height: 27.5px;
+    left: 154px;
+    top: 206px;
+
+    font-family: SF Pro Display;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    
+    color: #424D47;
+    
+    border: 0px solid #BDCAC2;
+}
+.save-changes-button {
+    position: absolute;
+    left: 113px;
+    top: 254px;
+}
+.submit-request-button {
+    position: absolute;
+    left: 99px;
+    top: 457px;
+}
+.subway {
+    position: absolute;
+    left: 36px;
+    top: 541px;
+}

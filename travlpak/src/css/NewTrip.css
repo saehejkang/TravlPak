@@ -1,0 +1,194 @@
+.new-trip-bg {
+    position: absolute;
+    left: 35px;
+    top: 57px;
+}
+.green-exit-icon {
+    position: absolute;
+    right: 40px;
+    top: 57px;
+}
+.trip-name-input {
+    position: absolute;
+    width: 342px;
+    height: 29px;
+    left: 35px;
+    top: 159px;
+
+    font-family: SF Pro Display;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+  
+    border: 0px solid #BDCAC2;
+    box-sizing: border-box;
+    color: #424D47;
+}
+.destination-input {
+    position: absolute;
+    width: 342px;
+    height: 29px;
+    left: 35px;
+    top: 252px;
+
+    font-family: SF Pro Display;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+  
+    border: 0px solid #BDCAC2;
+    box-sizing: border-box;
+    color: #424D47;
+}
+.start-date-input {
+    position: absolute;
+    width: 155px;
+    height: 29px;
+    left: 35px;
+    top: 348px;
+
+    font-family: SF Pro Display;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+  
+    border: 0px solid #BDCAC2;
+    box-sizing: border-box;
+    color: #424D47;
+}
+.end-date-input {
+    position: absolute;
+    width: 155px;
+    height: 29px;
+    left: 214px;
+    top: 348px;
+
+    font-family: SF Pro Display;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+  
+    border: 0px solid #BDCAC2;
+    box-sizing: border-box;
+    color: #424D47;
+}
+.add-participant-icon {
+    position: absolute;
+    right: 48px;
+    top: 406px;
+}
+.new-trip-profile-pic {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    border-radius: 24px;
+}
+.new-trip-divider {
+    position: absolute;
+    top: 47px;
+}
+.new-trip-participant-name {
+    position: absolute;
+    left: 64px;
+    top: 13px;
+    width: 224px;
+    
+    font-family: SF Pro Text;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    
+    color: #424D47;
+}
+.remove-participant-icon {
+    position: absolute;
+    right: 12px;
+    top: 8px;
+}
+.participant-0 {
+    position: absolute;
+    top: 469px;
+    left: 36px;
+    width: 343px;
+    height: 60px;
+}
+.participant-1 {
+    position: absolute;
+    top: 541px;
+    left: 36px;
+    width: 343px;
+    height: 60px;
+}
+.participant-2 {
+    position: absolute;
+    top: 613px;
+    left: 36px;
+    width: 343px;
+    height: 60px;
+}
+.participant-3 {
+    position: absolute;
+    top: 685px;
+    left: 36px;
+    width: 343px;
+    height: 60px;
+}
+.participant-4 {
+    position: absolute;
+    top: 757px;
+    left: 36px;
+    width: 343px;
+    height: 60px;
+}
+.participant-5 {
+    position: absolute;
+    top: 829px;
+    left: 36px;
+    width: 343px;
+    height: 60px;
+}
+.participant-6 {
+    position: absolute;
+    top: 901px;
+    left: 36px;
+    width: 343px;
+    height: 60px;
+}
+.participant-7 {
+    position: absolute;
+    top: 973px;
+    left: 36px;
+    width: 343px;
+    height: 60px;
+}
+.participant-8 {
+    position: absolute;
+    top: 1045px;
+    left: 36px;
+    width: 343px;
+    height: 60px;
+}
+.participant-9 {
+    position: absolute;
+    top: 1117px;
+    left: 36px;
+    width: 343px;
+    height: 60px;
+}
+.participant-10 {
+    position: absolute;
+    top: 1189px;
+    left: 36px;
+    width: 343px;
+    height: 60px;
+}
+.create-trip-button {
+    position: absolute;
+    top: -25px;
+    left: 183px;
+}

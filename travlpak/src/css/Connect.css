@@ -1,0 +1,48 @@
+.connect-title {
+    position: absolute;
+    left: 162px;
+    top: 57px;
+
+    font-family: SF Pro Display;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    /* identical to box height */
+  
+  
+    color: #FFFFFF;  
+}
+.bell-icon {
+    position: absolute;
+    left: 36px;
+    top: 168px;
+}
+.global-posts {
+    position: absolute;
+    width: 151px;
+    height: 29px;
+    left: 103px;
+    top: 178px;
+    
+    font-family: SF Pro Text;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+    /* identical to box height */
+    
+    text-align: center;
+    
+    color: #424D47;
+}
+.connect-chat-icon {
+    position: absolute;
+    left: 282px;
+    top: 168px;
+}
+.connect-plus-icon {
+    position: absolute;
+    left: 338px;
+    top: 168px;
+}

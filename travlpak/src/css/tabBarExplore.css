@@ -1,0 +1,20 @@
+.explore-pressed {
+    position: absolute;
+    left: 17px;
+    top: 16px;
+}
+.explore-plan-icon {
+    position: absolute;
+    left: 227px;
+    top: 24px;
+}
+.explore-connect-icon {
+    position: absolute;
+    left: 166px;
+    top: 25px;
+}
+.explore-profile-icon {
+    position: absolute;
+    left: 288px;
+    top: 24px;
+}

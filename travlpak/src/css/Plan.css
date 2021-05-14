@@ -1,0 +1,195 @@
+.plan {
+    position: relative;
+    width: 414px;
+    height: 896px;
+}
+.plan-title {
+    position: absolute;
+    left: 184px;
+    top: 57px;
+
+    font-family: SF Pro Display;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    /* identical to box height */
+  
+  
+    color: #FFFFFF;  
+}
+.invitation-icon {
+    position: absolute;
+    left: 36px;
+    top: 168px;
+}
+.calendar-icon {
+    position: absolute;
+    left: 282px;
+    top: 168px;
+}
+.plan-plus-icon {
+    position: absolute;
+    left: 338px;
+    top: 168px;
+}
+.my-trips {
+    position: absolute;
+    width: 104px;
+    height: 29px;
+    left: 127px;
+    top: 178px;
+    
+    font-family: SF Pro Text;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+    /* identical to box height */
+    
+    
+    color: #424D47;
+}
+.trip-0 {
+    position: absolute;
+    left: 36px;
+    top: 244px;
+}
+.trip-1 {
+    position: absolute;
+    left: 36px;
+    top: 382px;
+}
+.trip-2 {
+    position: absolute;
+    left: 36px;
+    top: 520px;
+}
+.trip-3 {
+    position: absolute;
+    left: 36px;
+    top: 658px;
+}
+.trip-4 {
+    position: absolute;
+    left: 36px;
+    top: 796px;
+}
+.trip-5 {
+    position: absolute;
+    left: 36px;
+    top: 934px;
+}
+.trip-6 {
+    position: absolute;
+    left: 36px;
+    top: 1072px;
+}
+.trip-7 {
+    position: absolute;
+    left: 36px;
+    top: 1210px;
+}
+.trip-8 {
+    position: absolute;
+    left: 36px;
+    top: 1348px;
+}
+.trip-9 {
+    position: absolute;
+    left: 36px;
+    top: 1486px;
+}
+.trip-10 {
+    position: absolute;
+    left: 36px;
+    top: 1624px;
+}
+.display-trip-name {
+    position: absolute;
+    left: 12px;
+    top: 32px;
+    
+    font-family: SF Pro Text;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 21px;
+    
+    color: #424D47;
+}
+.display-destination-name {
+    position: absolute;
+    left: 12px;
+    top: 62px;
+    
+    font-family: SF Pro Text;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 21px;
+    
+    color: #424D47;    
+}
+.display-dates {
+    position: absolute;
+    height: 20px;
+    left: 12px;
+    top: 86px;
+    
+    font-family: SF Pro Text;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    /* identical to box height, or 143% */
+    
+    
+    color: #BDCAC2;    
+}
+.percent-planned {
+    position: absolute;
+    height: 20px;
+    right: 12px;
+    top: 32px;
+    
+    font-family: SF Pro Text;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 20px;
+    /* identical to box height, or 167% */
+    
+    
+    color: #2A6049;    
+}
+.percent-bar {
+    position: absolute;
+    right: 12px;
+    top: 51px;
+    width: 100px;
+    height: 4px;
+    border-radius: 2px;
+}
+.display-num-participants {
+    position: absolute;
+    right: 12px;
+    top: 80px;
+}
+.num-participants {
+    position: absolute;
+    right: 17px;
+    top: 84px;
+    width: 18px;
+
+    font-family: SF Pro Text;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 20px;
+    /* identical to box height, or 167% */
+    
+    text-align: center;
+    
+    color: #BDCAC2;
+}

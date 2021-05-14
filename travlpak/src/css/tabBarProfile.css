@@ -1,5 +1,10 @@
+.gradient {
+  position: fixed;
+  left: 0px;
+  top: 683px;
+}
 .tab-bar {
-  position: absolute;
+  position: fixed;
   left: 36px;
   top: 778px;
   bottom: 46px;

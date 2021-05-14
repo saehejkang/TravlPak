@@ -8,6 +8,12 @@ import CreateProfile from "./components/CreateProfile";
 import Home from "./components/Home";
 import SavedLocationsMapView from "./components/SavedLocationsMapView";
 import SearchPreferences from "./components/SearchPreferences";
+import AccountSettings from "./components/AccountSettings";
+import Explore from "./components/Explore";
+import Connect from "./components/Connect";
+import Plan from "./components/Plan";
+import NewTrip from "./components/NewTrip";
+import TripOverview from "./components/TripOverview";
 
 function App() {
   return (
@@ -21,6 +27,12 @@ function App() {
         <Route path="/home" component={Home}/>
         <Route path="/savedLocations-mapView" exact component={SavedLocationsMapView}/>
         <Route path="/searchPreferences" component={SearchPreferences}/>
+        <Route path="/accountSettings" component={AccountSettings}/>
+        <Route path="/explore" component={Explore}/>
+        <Route path="/connect" component={Connect}/>
+        <Route path="/plan" component={Plan}/>
+        <Route path="/tripOverview" component={TripOverview}/>
+        <Route path="/newTrip" component={NewTrip}/>
       </Switch>
     </Router>
   );
