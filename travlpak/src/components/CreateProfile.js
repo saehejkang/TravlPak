@@ -113,7 +113,7 @@ class CreateProfile extends Component {
         
         <div className="interests-prompt">Tell us about your Interests!</div>
         <div className="create-profile-tags">
-          <img className="photography" src={this.getstate(this.state.interests[0]) ? photogtaphyS : photogtaphyU} alt="photography tag" onClick={(e) => this.changeState(0)}/>
+          <img className="photography" src={this.state.interests[0] ? photogtaphyS : photogtaphyU} alt="photography tag" onClick={(e) => this.changeState(0)}/>
           <img className="viticulture" src={this.state.interests[1] ? viticultureS : viticultureU} alt="viticulture tag" onClick={(e) => this.changeState(1)}/>
           <img className="nature" src={this.state.interests[2] ? natureS : natureU} alt="nature tag" onClick={(e) => this.changeState(2)}/>
           <img className="hiking" src={this.state.hiking ? hikingS : hikingU} alt="hiking tag" onClick={(e) => this.changeState(3)}/>
