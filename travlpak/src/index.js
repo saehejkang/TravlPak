@@ -7,7 +7,7 @@ import Calendar from "./components/Calendar";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Calendar />
+    <App />
   </React.StrictMode>,
   document.getElementById("root")
 );

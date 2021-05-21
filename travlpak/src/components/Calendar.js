@@ -14,15 +14,14 @@ class Calendar extends Component {
   };
 
   render() {
-    const props = this.props;
     return (
       <div>
         <DateRangePicker
           startDate={this.state.startDate} // momentPropTypes.momentObj or null,
-          startDatePlaceholderText={"Start Date"}
+          startDatePlaceholderText={"Departing"}
           startDateId="your_unique_start_date_id" // PropTypes.string.isRequired,
           endDate={this.state.endDate} // momentPropTypes.momentObj or null,
-          endDatePlaceholderText={"End Date"}
+          endDatePlaceholderText={"Returning"}
           endDateId="your_unique_end_date_id" // PropTypes.string.isRequired,
           onDatesChange={({ startDate, endDate }) =>
             this.setState({ startDate, endDate })
