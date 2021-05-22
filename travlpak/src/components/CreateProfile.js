@@ -2,6 +2,7 @@ import "../css/CreateProfile.css";
 
 import { Component } from "react";
 import { Link } from "react-router-dom";
+import update from 'react-addons-update';
 
 import uploadIcon from "../resources/CreateProfile-Resources/uploadIcon.svg";
 import arrowButton from "../resources/CreateProfile-Resources/arrowButton.svg";
@@ -48,24 +49,13 @@ class CreateProfile extends Component {
   };
 
   changeState(value) {
-    var variable = this.state.interests[value];
-    if (variable){
-        this.state.interests[value] = false;
-    }
-    else {
-        this.state.interests[value] = true;
-    }
-  }
-
-  getstate(value){
-    var variable = false;
-    if (value){
-        variable = true;
-    }
-    else{
-        variable = false;
-    }
-    return variable;
+    this.setState(update(this.state, {
+      interests: {
+        [value]: {
+          $set : !this.state.interests[value]
+        }
+      }
+    }));
   }
 
   firebase_update = (user) => {
@@ -116,16 +106,16 @@ class CreateProfile extends Component {
           <img className="photography" src={this.state.interests[0] ? photogtaphyS : photogtaphyU} alt="photography tag" onClick={(e) => this.changeState(0)}/>
           <img className="viticulture" src={this.state.interests[1] ? viticultureS : viticultureU} alt="viticulture tag" onClick={(e) => this.changeState(1)}/>
           <img className="nature" src={this.state.interests[2] ? natureS : natureU} alt="nature tag" onClick={(e) => this.changeState(2)}/>
-          <img className="hiking" src={this.state.hiking ? hikingS : hikingU} alt="hiking tag" onClick={(e) => this.changeState(3)}/>
-          <img className="skiing" src={this.state.skiing ? skiingS : skiingU} alt="skiing tag" onClick={(e) => this.changeState(4)}/>
-          <img className="mountain-biking" src={this.state.mountainBiking ? mountainBikingS : mountainBikingU} alt="mountain biking tag" onClick={(e) => this.changeState(5)}/>
-          <img className="beaches" src={this.state.beaches ? beachesS : beachesU} alt="beaches tag" onClick={(e) => this.changeState(6)}/>
-          <img className="architecture" src={this.state.architecture ? architectureS : architectureU} alt="architecture tag" onClick={(e) => this.changeState(7)}/>
-          <img className="surfing" src={this.state.surfing ? surfingS : surfingU} alt="surfing tag" onClick={(e) => this.changeState(8)}/>
-          <img className="botany" src={this.state.botany ? botanyS : botanyU} alt="botany tag" onClick={(e) => this.changeState(9)}/>
-          <img className="history2" src={this.state.history ? historyS : historyU} alt="history tag" onClick={(e) => this.changeState(10)}/>
-          <img className="art" src={this.state.art ? artS : artU} alt="art tag" onClick={(e) => this.changeState(11)}/>
-          <img className="urban-settings" src={this.state.urbanSettings ? urbanSettingsS : urbanSettingsU} alt="urban settings tag" onClick={(e) => this.changeState(12)}/>
+          <img className="hiking" src={this.state.interests[3] ? hikingS : hikingU} alt="hiking tag" onClick={(e) => this.changeState(3)}/>
+          <img className="skiing" src={this.state.interests[4] ? skiingS : skiingU} alt="skiing tag" onClick={(e) => this.changeState(4)}/>
+          <img className="mountain-biking" src={this.state.interests[5] ? mountainBikingS : mountainBikingU} alt="mountain biking tag" onClick={(e) => this.changeState(5)}/>
+          <img className="beaches" src={this.state.interests[6] ? beachesS : beachesU} alt="beaches tag" onClick={(e) => this.changeState(6)}/>
+          <img className="architecture" src={this.state.interests[7] ? architectureS : architectureU} alt="architecture tag" onClick={(e) => this.changeState(7)}/>
+          <img className="surfing" src={this.state.interests[8] ? surfingS : surfingU} alt="surfing tag" onClick={(e) => this.changeState(8)}/>
+          <img className="botany" src={this.state.interests[9] ? botanyS : botanyU} alt="botany tag" onClick={(e) => this.changeState(9)}/>
+          <img className="history2" src={this.state.interests[10] ? historyS : historyU} alt="history tag" onClick={(e) => this.changeState(10)}/>
+          <img className="art" src={this.state.interests[11] ? artS : artU} alt="art tag" onClick={(e) => this.changeState(11)}/>
+          <img className="urban-settings" src={this.state.interests[12] ? urbanSettingsS : urbanSettingsU} alt="urban settings tag" onClick={(e) => this.changeState(12)}/>
         </div>
         <Link to="home">
           <img className="arrow-button" src={arrowButton} alt="arrow button" onClick={this.firebase_update} />
