@@ -72,7 +72,7 @@ class CreateProfile extends Component {
           console.log(user.uid);
           console.log(location);
           console.log(bio);
-          db.collection("Users").doc(user.uid).set({
+          db.collection("Users").doc(user.uid).update({
                       Location: location,
                       bio: bio,
                       interests: interests
