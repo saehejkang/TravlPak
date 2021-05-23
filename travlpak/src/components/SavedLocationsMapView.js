@@ -37,9 +37,7 @@ class SavedLocationsMapView extends Component {
         </div>
         <img className="map-selected" src={mapSelected} alt="map view selected"/>
         <div className="list-view">List View</div>
-        <Link to="/home">
-        <img className="x" src={xIcon} alt="x icon" />
-        </Link>
+        
         <TabBar />
       </div>
     );
@@ -47,10 +45,10 @@ class SavedLocationsMapView extends Component {
 }
 
 const mapStyles = {
-  top: '33%',
-  left: '3.5%',
-  width: '28%',
-  height: '55%',
+  width: '335px',
+  height: '486px',
+  left: '40px',
+  top: '215px',  
   borderRadius: 8
 };
 
