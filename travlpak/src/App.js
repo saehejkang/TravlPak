@@ -11,6 +11,10 @@ import SearchPreferences from "./components/SearchPreferences";
 import AccountSettings from "./components/AccountSettings";
 import Explore from "./components/Explore";
 import Connect from "./components/Connect";
+import MessageCenter from "./components/MessageCenter";
+import MessageCenterTrips from "./components/MessageCenterTrips";
+import Chat from "./components/Chat";
+import Profile from "./components/Profile";
 import Plan from "./components/Plan";
 import NewTrip from "./components/NewTrip";
 import TripOverview from "./components/TripOverview";
@@ -30,6 +34,10 @@ function App() {
         <Route path="/accountSettings" component={AccountSettings}/>
         <Route path="/explore" component={Explore}/>
         <Route path="/connect" component={Connect}/>
+        <Route path="/messageCenterFriends" component={MessageCenter}/>
+        <Route path="/messageCenterTrips" component={MessageCenterTrips}/>
+        <Route path="/chat" component={Chat}/>
+        <Route path="/profile" component={Profile}/>
         <Route path="/plan" component={Plan}/>
         <Route path="/tripOverview" component={TripOverview}/>
         <Route path="/newTrip" component={NewTrip}/>
@@ -39,3 +47,5 @@ function App() {
 }
 
 export default App;
+
+
