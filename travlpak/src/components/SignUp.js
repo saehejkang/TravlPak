@@ -91,26 +91,7 @@ class SignUp extends Component {
     querySnapshot.forEach((doc) => {
         console.log(`${doc.id} => ${doc.data()}`);
     });
-  });
-    var file = "ProfilePictureTest.png";
-    var metadata = {
-      contentType: 'image/png',
-    };
-    var storageRef = fire.storage().ref().child("ProfilePictures/").child(file);
-    var task = storageRef.put(file,metadata);
-
-    task.on('state_changed',
-
-  function progress (snapshot){
-      console.log(snapshot.bytesTransferred)
-    },
-    function error(err){
-
-    },
-    function complete() {
-
-    }
-  );
+   });
 }
 
   render() {
