@@ -30,8 +30,6 @@ class SavedLocationsMapView extends Component {
           style={mapStyles}
           initialCenter={{ lat: 47.444, lng: -122.176}}
         />
-        {//<div className="map" style={{ backgroundImage: `url(${this.state.map})` }}></div>
-  }
         <div className="selection-bar">  
           <svg width="344" height="40" viewBox="0 0 344 40" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect x="1" y="1" width="342" height="38" rx="19" fill="white" stroke="#BDCAC2"/>
@@ -39,7 +37,9 @@ class SavedLocationsMapView extends Component {
         </div>
         <img className="map-selected" src={mapSelected} alt="map view selected"/>
         <div className="list-view">List View</div>
-
+        <Link to="/home">
+        <img className="x" src={xIcon} alt="x icon" />
+        </Link>
         <TabBar />
       </div>
     );
@@ -51,12 +51,12 @@ const mapStyles = {
   left: '3.5%',
   width: '28%',
   height: '55%',
-  borderRadius: 8,
+  borderRadius: 8
 };
 
 //export default SavedLocationsMapView;
 export default GoogleApiWrapper({
-  apiKey: process.nextTick.REACT_APP_API_KEY
+  apiKey: process.nextTick.GOOGLE_API_KEY
  })(SavedLocationsMapView);
 
 function Background() {
@@ -66,9 +66,6 @@ function Background() {
       <img className="white" src={whiteBackground} alt="white background" />
       <img className="dots-stars" src={dotsStarsBackground} alt="dots stars background" />
       <h1 className="title">My Saved Locations</h1>
-      <Link to="/home">
-        <img className="x" src={xIcon} alt="x icon" />
-      </Link>
     </div>
   );
 }

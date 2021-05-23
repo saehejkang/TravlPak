@@ -62,7 +62,7 @@ class CreateProfile extends Component {
   chooseFile = event => {
     console.log(event.target.files[0])
     this.setState({
-      profilePicture: event.target.files[0]
+      profilePicture: event.target.files[0],
     })
   }
 
