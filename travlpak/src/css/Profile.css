@@ -1,0 +1,119 @@
+.profile-page {
+    position: relative;
+    width: 414px;
+    height: 896px;
+}
+.user-profile-picture {
+    position: absolute;
+    width: 414px;
+    height: 414px;
+    left: 0px;
+    top: 0px;
+}
+.profile-white {
+    position: absolute;
+    width: 414px;
+    height: 512px;
+    left: 0px;
+    top: 384px;
+}
+.profile-name {
+    position: absolute;
+    width: 209px;
+    height: 43px;
+    left: 36px;
+    top: 420px;
+    
+    font-family: SF Pro Display;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 43px;
+    /* identical to box height */
+    
+    
+    color: #424D47;
+}
+.profile-age {
+    position: absolute;
+    width: 32px;
+    height: 20px;
+    left: 260px;
+    top: 433px;
+    
+    font-family: SF Pro Text;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 20px;
+    /* identical to box height, or 83% */
+    
+    
+    color: #BFC0C0;
+}
+.add-remove-button {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    left: 330px;
+    top: 408px;    
+}
+.profile-bio {
+    position: absolute;
+    width: 342px;
+    height: 62px;
+    left: 36px;
+    top: 478px;
+    
+    font-family: SF Pro Text;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 20px;
+    /* or 111% */
+    
+    
+    color: #424D47;    
+}
+.profile-boxes {
+    position: absolute;
+    width: 382px;
+    height: 116px;
+    left: 16px;
+    top: 560px;
+}
+.profile-trips-taken {
+    position: absolute;
+    left: 36px;
+    top: 596px;
+    
+    font-family: SF Pro Text;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    /* identical to box height, or 143% */
+    
+    
+    color: #EC744A;
+}
+.profile-location {
+    position: absolute;
+    left: 223px;
+    top: 596px;
+    
+    font-family: SF Pro Text;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    /* identical to box height, or 143% */
+    
+    
+    color: #EC744A;
+}
+.example-interests {
+    position: absolute;
+    left: 36px;
+    top: 684px;    
+}
