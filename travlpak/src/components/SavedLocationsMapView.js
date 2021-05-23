@@ -14,6 +14,7 @@ import profileIcon from "../resources/tabBar-Resources/profileIcon.svg";
 import profilePressed from "../resources/tabBar-Resources/profilePressed.svg";
 import map from "../resources/SavedLocationsMapView-Resources/map.svg";
 import mapSelected from "../resources/SavedLocationsMapView-Resources/mapSelected.svg";
+import { Map, GoogleApiWrapper } from 'google-maps-react';
 
 class SavedLocationsMapView extends Component {
   state = {
@@ -23,8 +24,14 @@ class SavedLocationsMapView extends Component {
     return (
       <div className="saved-locations-map-view">
         <Background />
-        <div className="map" style={{ backgroundImage: `url(${this.state.map})` }}></div>
-        
+        <Map 
+          google={this.props.google} 
+          zoom={8}
+          style={mapStyles}
+          initialCenter={{ lat: 47.444, lng: -122.176}}
+        />
+        {//<div className="map" style={{ backgroundImage: `url(${this.state.map})` }}></div>
+  }
         <div className="selection-bar">  
           <svg width="344" height="40" viewBox="0 0 344 40" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect x="1" y="1" width="342" height="38" rx="19" fill="white" stroke="#BDCAC2"/>
@@ -38,7 +45,19 @@ class SavedLocationsMapView extends Component {
     );
   }
 }
-export default SavedLocationsMapView;
+
+const mapStyles = {
+  top: '33%',
+  left: '3.5%',
+  width: '28%',
+  height: '55%',
+  borderRadius: 8,
+};
+
+//export default SavedLocationsMapView;
+export default GoogleApiWrapper({
+  apiKey: process.nextTick.REACT_APP_API_KEY
+ })(SavedLocationsMapView);
 
 function Background() {
   return (
