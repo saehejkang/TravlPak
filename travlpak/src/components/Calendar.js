@@ -1,7 +1,8 @@
-import "react-dates/initialize";
 import { Component } from "react";
-import { DateRangePicker } from "react-dates";
-import "react-dates/lib/css/_datepicker.css";
+import { Link } from "react-router-dom";
+import exitIcon from "../resources/NewTrip-Resources/exitIcon.svg";
+import { CalendarComponent } from "@syncfusion/ej2-react-calendars";
+import "../css/Calendar.css";
 
 class Calendar extends Component {
   state = {
@@ -9,27 +10,16 @@ class Calendar extends Component {
     endDate: "",
     focusedInput: "",
   };
-  props = {
-    numberOfMonths: 1,
-  };
 
   render() {
     return (
-      <div>
-        <DateRangePicker
-          startDate={this.state.startDate} // momentPropTypes.momentObj or null,
-          startDatePlaceholderText={"Departing"}
-          startDateId="your_unique_start_date_id" // PropTypes.string.isRequired,
-          endDate={this.state.endDate} // momentPropTypes.momentObj or null,
-          endDatePlaceholderText={"Returning"}
-          endDateId="your_unique_end_date_id" // PropTypes.string.isRequired,
-          onDatesChange={({ startDate, endDate }) =>
-            this.setState({ startDate, endDate })
-          } // PropTypes.func.isRequired,
-          focusedInput={this.state.focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
-          onFocusChange={(focusedInput) => this.setState({ focusedInput })} // PropTypes.func.isRequired,
-          numberOfMonths={1}
-        />
+      <div className="plan">
+        <Link to="/plan">
+          <img className="green-exit-icon" src={exitIcon} alt="exit icon" />
+        </Link>
+        <div className="p-5">
+          <CalendarComponent isMultiSelection={true} />
+        </div>
       </div>
     );
   }
@@ -57,6 +47,8 @@ import {
   OPEN_DOWN,
 } from "react-dates";
 import isInclusivelyAfterDay from "react-dates";
+import { Link } from 'react-router-dom';
+import Calendar from './Calendar';
 
 const propTypes = {
   // example props for the demo
