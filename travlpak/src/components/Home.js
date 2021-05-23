@@ -23,7 +23,7 @@ class Home extends Component {
     name: "",
     location: "",
     aboutMeText: "",
-    profilePictureImage: "https://images.unsplash.com/photo-1492693429561-1c283eb1b2e8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80",
+    profilePictureImage: "",
     friendRequestsNumber: "0",
     unreadMessagesNumber: "0",
     tripInvitationsNumber: "0",
@@ -54,10 +54,10 @@ class Home extends Component {
               var db = fire.firestore()
               console.log(user)
               db.collection("Users").onSnapshot(data => {
-                  this.getUserData(user)
-                  }, err => {
-                    console.lof(err)
-                  });
+                this.getUserData(user)
+              }, err => {
+                  console.lof(err)
+              });
               //call function here and pass in user which is the data
           } else {
               console.log('user signed out')
@@ -73,6 +73,17 @@ class Home extends Component {
         name: doc.data().FirstName,
         aboutMeText: doc.data().bio,
         location: doc.data().Location
+      })
+    })
+
+    fire.storage().ref('ProfilePicutres/' + user.uid).getDownloadURL().then(imgURL => {
+      this.setState({
+        profilePictureImage: imgURL
+      })
+    }).catch(error => {
+      console.log(error)
+      this.setState({
+        profilePictureImage: "https://images.unsplash.com/photo-1492693429561-1c283eb1b2e8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80"
       })
     })
   }

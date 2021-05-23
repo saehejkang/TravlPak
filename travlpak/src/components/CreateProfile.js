@@ -40,12 +40,13 @@ import fire from '../firebase.js'
 
 class CreateProfile extends Component {
   state = {
+    profilePicture: null,
     location: "",
     bio: "",
     age: 0,
     interests: [false, false, false, false,
         false, false, false, false, false,
-        false, false, false, false],
+        false, false, false, false]
   };
 
   changeState(value) {
@@ -58,6 +59,13 @@ class CreateProfile extends Component {
     }));
   }
 
+  chooseFile = event => {
+    console.log(event.target.files[0])
+    this.setState({
+      profilePicture: event.target.files[0]
+    })
+  }
+
   firebase_update = (user) => {
       let profilePicture = this.state.profilePicture
       let location  = this.state.location
@@ -65,35 +73,39 @@ class CreateProfile extends Component {
       let age = this.state.age
       let interests = this.state.interests
 
-      var db = fire.firestore();
+      var db = fire.firestore()
 
       fire.auth().onAuthStateChanged(function(user) {
         if (user) {
-          console.log(user.uid);
-          console.log(location);
-          console.log(bio);
-          db.collection("Users").doc(user.uid).update({
-                      Location: location,
-                      bio: bio,
-                      interests: interests
-                }, {merge: true}).then(() => {
-                       console.log("Document successfully updated!");
-                })
-                .catch((error) => {
-                     console.log("Error updating documents: ", error);
-                });
+          fire.storage().ref('ProfilePicutres/' + user.uid).put(profilePicture).then(function () {
+            console.log('uploaded picture')
+          }).catch(error => {
+            console.log(error.message)
+          })
+
+      db.collection("Users").doc(user.uid).update({
+        Location: location,
+        bio: bio,
+        interests: interests
+        }, {merge: true}).then(() => {
+          console.log("Document successfully updated!")
+        })
+        .catch((error) => {
+           console.log("Error updating documents: ", error)
+        })
         } else {
-           console.log("User not logged in");
+           console.log("User not logged in")
         }
       });
-      console.log(this.state.email);
+      console.log(this.state.email)
   }
 
   render() {
     return (
       <div className="create-profile">
         <div className="add-profile-pic">Add a Profile Picture</div>
-        <img className="upload-icon" src={uploadIcon} alt="upload icon" />
+        <input style={{display: 'none'}} type="file" onChange={this.chooseFile} ref={fileInput => this.fileInput = fileInput}/>
+        <img className="upload-icon" src={uploadIcon} alt="upload icon" onClick={() => this.fileInput.click()}/>
         
         <div className="where-travel">Where will you travel from?</div>
         <input placeholder="San Luis Obispo, CA, US" className="location-box" type="text" value={this.location} onChange={(e) => this.setState({location: e.target.value })}/>
