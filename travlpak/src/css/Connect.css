@@ -1,3 +1,15 @@
+.connect {
+    position: relative;
+    width: 414px;
+    height: 896px;    
+}
+.global-messages {
+    position: absolute;
+    left: 16px;
+    right: 16px;
+    top: 170px; 
+    bottom: 140px; 
+}
 .connect-title {
     position: absolute;
     left: 162px;
@@ -45,4 +57,80 @@
     position: absolute;
     left: 338px;
     top: 168px;
+}
+.global-chat-box {
+    position: absolute;
+    width: 328px;
+    height: 45px;
+    left: 27px;
+    bottom: 140px;
+    padding-left: 31px;
+    padding-right: 31px;
+    
+    font-family: SF Pro Display;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+  
+    border: 0px;
+    background: #EC744A;
+    box-sizing: border-box;
+    border-radius: 27px;
+    color: #FFFFFF;
+}
+.global-chat-profile-picture {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    margin: 0px 8px;
+}
+.send-global-message {
+    position: absolute;
+    left: 333px;
+    bottom: 155;
+}
+main {
+    padding: 10px;
+    height: 80vh;
+    margin: 10vh 0 10vh;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+}
+form {
+    height: 10vh;
+    position: fixed;
+    bottom: 0;
+    background-color: transparent;
+    width: 100%;
+    max-width: 728px;
+    display: flex;
+    font-size: 1.5rem;
+}
+p14 {
+    max-width: 270px;
+    margin-bottom: 12px;
+    line-height: 24px;
+    padding: 10px 21px;
+    border-radius: 20px 20px 20px 20px;
+    position: relative;
+    color: white;
+}
+.message {
+    display: flex;
+    align-items: center;
+}  
+.sent {
+    flex-direction: row-reverse;
+    border-radius: row-reverse;
+}
+.sent p14 {
+    color: #424D47;
+    background: #E9E7E7;
+    align-self: flex-end;
+}
+.received p14 {
+    background: #EBB29E;
+    color: #FFFFFF;
 }
