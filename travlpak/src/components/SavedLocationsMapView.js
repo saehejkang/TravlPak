@@ -37,6 +37,10 @@ class SavedLocationsMapView extends Component {
         </div>
         <img className="map-selected" src={mapSelected} alt="map view selected"/>
         <div className="list-view">List View</div>
+
+        <Link to="/home">
+          <img className="x" src={xIcon} alt="x icon" />
+        </Link>
         
         <TabBar />
       </div>
