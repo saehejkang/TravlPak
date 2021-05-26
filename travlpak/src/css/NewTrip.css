@@ -78,8 +78,8 @@
 }
 .add-participant-icon {
     position: absolute;
-    right: 48px;
-    top: 406px;
+    right: 13px;
+    top: 9px;
 }
 .new-trip-profile-pic {
     position: absolute;
@@ -112,83 +112,91 @@
 }
 .participant-0 {
     position: absolute;
-    top: 469px;
-    left: 36px;
+    top: 12px;
+    left: 16px;
     width: 343px;
     height: 60px;
 }
 .participant-1 {
     position: absolute;
-    top: 541px;
-    left: 36px;
+    top: 84px;
+    left: 16px;
     width: 343px;
     height: 60px;
 }
 .participant-2 {
     position: absolute;
-    top: 613px;
-    left: 36px;
+    top: 156px;
+    left: 16px;
     width: 343px;
     height: 60px;
 }
 .participant-3 {
     position: absolute;
-    top: 685px;
-    left: 36px;
+    top: 228px;
+    left: 16px;
     width: 343px;
     height: 60px;
 }
 .participant-4 {
     position: absolute;
-    top: 757px;
-    left: 36px;
+    top: 300px;
+    left: 16px;
     width: 343px;
     height: 60px;
 }
 .participant-5 {
     position: absolute;
-    top: 829px;
-    left: 36px;
+    top: 372px;
+    left: 16px;
     width: 343px;
     height: 60px;
 }
 .participant-6 {
     position: absolute;
-    top: 901px;
-    left: 36px;
+    top: 444px;
+    left: 16px;
     width: 343px;
     height: 60px;
 }
 .participant-7 {
     position: absolute;
-    top: 973px;
-    left: 36px;
+    top: 516px;
+    left: 16px;
     width: 343px;
     height: 60px;
 }
 .participant-8 {
     position: absolute;
-    top: 1045px;
-    left: 36px;
+    top: 588px;
+    left: 16px;
     width: 343px;
     height: 60px;
 }
 .participant-9 {
     position: absolute;
-    top: 1117px;
-    left: 36px;
+    top: 660px;
+    left: 16px;
     width: 343px;
     height: 60px;
 }
 .participant-10 {
     position: absolute;
-    top: 1189px;
-    left: 36px;
+    top: 732px;
+    left: 16px;
     width: 343px;
     height: 60px;
 }
 .create-trip-button {
     position: absolute;
-    top: -25px;
+    top: 710px;
     left: 183px;
+}
+.friends-scrollable {
+    position: absolute;
+    width: 374px;
+    height: 237px;
+    left: 20px;
+    top: 457px;
+    overflow-y: scroll;    
 }
