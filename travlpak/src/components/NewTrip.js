@@ -13,6 +13,7 @@ import gradient from "../resources/tabBar-Resources/gradient.svg";
 import exitIcon from "../resources/NewTrip-Resources/exitIcon.svg";
 import newTrip from "../resources/NewTrip-Resources/newTrip.svg";
 import removeIcon from "../resources/NewTrip-Resources/xIcon.svg";
+import addIcon from "../resources/NewTrip-Resources/addIcon.svg";
 import arrowButton from "../resources/CreateProfile-Resources/arrowButton.svg";
 
 class NewTrip extends Component {
@@ -40,19 +41,12 @@ class NewTrip extends Component {
         <input className="start-date-input" type="date" value={this.destination} onChange={(e) => this.setState({ destination: e.target.value })}/>
         <input className="end-date-input" type="date" value={this.destination} onChange={(e) => this.setState({ destination: e.target.value })}/>
 
-        <div className="add-participant-icon">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M16 9.33333V22.6667M9.33333 16H22.6667M4.33333 1H27.6667C29.5076 1 31 2.49238 31 4.33333V27.6667C31 29.5076 29.5076 31 27.6667 31H4.33333C2.49238 31 1 29.5076 1 27.6667V4.33333C1 2.49238 2.49238 1 4.33333 1Z" stroke="#638074" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+        <div className="friends-scrollable">
+          <ParticipantsList />
         </div>
 
-        <ParticipantsList />
-
         <Link to="/plan">
-            <div className="gradient">
-                <img src={gradient} alt="gradient"/>
-                <img className="create-trip-button" src={arrowButton} alt="arrow button" />
-            </div>
+          <img className="create-trip-button" src={arrowButton} alt="arrow button" />     
         </Link>
 
         <TabBar />
@@ -63,23 +57,69 @@ class NewTrip extends Component {
 export default NewTrip;
 
 function ParticipantsList() {
-    const participants = [
+    const friends = [
         {
-            participantNumber: 0,
-            name: "Maddie Hamilton",
-            profilePicture: "https://images.unsplash.com/photo-1479936343636-73cdc5aae0c3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=80",
-        },
-        {
-            participantNumber: 1,
-            name: "César Rincón",
-            profilePicture: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=80",
-        },
+          friendNumber: 0,
+          firstName: "Cory",
+          lastName: "Rincon",
+          profilePicture: "https://images.unsplash.com/photo-1479936343636-73cdc5aae0c3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=80",
+          participant: true,
+      },
+      {
+          friendNumber: 1,
+          firstName: "Matthew",
+          lastName: "Hamilton",
+          profilePicture: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=80",
+          participant: true,
+      },
+      {
+          friendNumber: 2,
+          firstName: "Annie",
+          lastName: "Spratt",
+          profilePicture: "https://images.unsplash.com/photo-1517821099606-cef63a9bcda6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1148&q=80",
+          participant: false,
+      },
+      {
+          friendNumber: 3,
+          firstName: "Kalen",
+          lastName: "Emsley",
+          profilePicture: "https://images.unsplash.com/photo-1515121061221-7d6ce2dcd1fe?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=80",
+          participant: false,
+      },
+      {
+          friendNumber: 4,
+          firstName: "Jonathan",
+          lastName: "Cooper",
+          profilePicture: "https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=80",
+          participant: false,
+      },
+      {
+          friendNumber: 5,
+          firstName: "Emanuela",
+          lastName: "Picone",
+          profilePicture: "https://images.unsplash.com/photo-1465310477141-6fb93167a273?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80",
+          participant: false,
+      },
+      {
+          friendNumber: 6,
+          firstName: "Dan",
+          lastName: "Freeman",
+          profilePicture: "https://images.unsplash.com/photo-1517847624229-2885be08059a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=80",
+          participant: false,
+      },
+      {
+          friendNumber: 7,
+          firstName: "Jovan",
+          lastName: "Vasiljević",
+          profilePicture: "https://images.unsplash.com/photo-1615586183480-f1f2f34c1419?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=80",
+          participant: false,
+      },
     ]
 
     return (
-        participants.map(
+        friends.map(
             participant => (
-                <div className={"participant-" + participant.participantNumber}>
+                <div className={"participant-" + participant.friendNumber}>
                     <div className="new-trip-divider">
                         <svg width="342" height="1" viewBox="0 0 342 1" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <line y1="0.5" x2="342" y2="0.5" stroke="#BDCAC2"/>
@@ -87,8 +127,8 @@ function ParticipantsList() {
                     </div>
 
                     <img className="new-trip-profile-pic" src={participant.profilePicture} alt="profile pic"/>
-                    <h1 className="new-trip-participant-name">{participant.name}</h1>
-                    <img className="remove-participant-icon" src={removeIcon} alt="remove participant icon"/>
+                    <h1 className="new-trip-participant-name">{participant.firstName + " " + participant.lastName}</h1>
+                    <img className={participant.participant ? "remove-participant-icon" : "add-participant-icon"} src={participant.participant ? removeIcon : addIcon} alt="remove/add participant icon" onClick={participant.participant = false}/>
                 </div>
             )
         )
