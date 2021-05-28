@@ -14,6 +14,7 @@ System Architecture
 
 In a new folder on the terminal run:
 ```bash
+git init
 git clone https://github.com/saehejkang/TravlPak.git
 ```
 
