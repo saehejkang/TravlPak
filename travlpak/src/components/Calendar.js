@@ -2,27 +2,44 @@ import { Component } from "react";
 import { Link } from "react-router-dom";
 import exitIcon from "../resources/NewTrip-Resources/exitIcon.svg";
 import { CalendarComponent } from "@syncfusion/ej2-react-calendars";
+import whiteBackground from "../resources/background-Resources/whiteBackground.svg";
+import dotsStarsBackground from "../resources/background-Resources/dotsStars.svg";
 import "../css/Calendar.css";
+import "../css/Plan.css";
 
 class Calendar extends Component {
-  state = {
-    startDate: "",
-    endDate: "",
-    focusedInput: "",
-  };
+  state = {};
 
   render() {
+    const dates = [new Date(2021, 6, 24), new Date(2021, 7, 4)];
     return (
       <div className="plan">
-        <Link to="/plan">
-          <img className="green-exit-icon" src={exitIcon} alt="exit icon" />
-        </Link>
-        <div className="p-5">
-          <CalendarComponent isMultiSelection={true} />
+        {/* <Background /> */}
+        <div>
+          <Link to="/plan">
+            <img className="green-exit-icon" src={exitIcon} alt="exit icon" />
+          </Link>
+          <div className="p-5">
+            <CalendarComponent value={dates} isMultiSelection={true} />
+          </div>
         </div>
       </div>
     );
   }
+}
+function Background() {
+  return (
+    <div>
+      <div className="green"></div>
+      <img className="white" src={whiteBackground} alt="white background" />
+      <img
+        className="dots-stars"
+        src={dotsStarsBackground}
+        alt="dots stars background"
+      />
+      <h1 className="plan-title">Plan</h1>
+    </div>
+  );
 }
 
 export default Calendar;
@@ -49,6 +66,7 @@ import {
 import isInclusivelyAfterDay from "react-dates";
 import { Link } from 'react-router-dom';
 import Calendar from './Calendar';
+import Plan from './Plan';
 
 const propTypes = {
   // example props for the demo

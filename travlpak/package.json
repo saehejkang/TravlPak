@@ -5,6 +5,7 @@
   "dependencies": {
     "@babel/runtime": "^7.14.0",
     "@react-firebase/auth": "^0.2.10",
+    "@syncfusion/ej2-react-calendars": "^19.1.64",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
