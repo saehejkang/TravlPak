@@ -8,22 +8,19 @@ import "../css/Calendar.css";
 import "../css/Plan.css";
 
 class Calendar extends Component {
-  state = {
-    startDate: "",
-    endDate: "",
-    focusedInput: "",
-  };
+  state = {};
 
   render() {
+    const dates = [new Date(2021, 6, 24), new Date(2021, 7, 4)];
     return (
       <div className="plan">
-        <Background />
+        {/* <Background /> */}
         <div>
           <Link to="/plan">
             <img className="green-exit-icon" src={exitIcon} alt="exit icon" />
           </Link>
           <div className="p-5">
-            <CalendarComponent isMultiSelection={true} />
+            <CalendarComponent value={dates} isMultiSelection={true} />
           </div>
         </div>
       </div>
