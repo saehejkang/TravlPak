@@ -2,8 +2,8 @@ import { Component } from "react";
 import { Link } from "react-router-dom";
 import exitIcon from "../resources/NewTrip-Resources/exitIcon.svg";
 import { CalendarComponent } from "@syncfusion/ej2-react-calendars";
-import whiteBackground from "../resources/background-Resources/whiteBackground.svg";
-import dotsStarsBackground from "../resources/background-Resources/dotsStars.svg";
+//import whiteBackground from "../resources/background-Resources/whiteBackground.svg";
+//import dotsStarsBackground from "../resources/background-Resources/dotsStars.svg";
 import "../css/Calendar.css";
 import "../css/Plan.css";
 
@@ -27,6 +27,7 @@ class Calendar extends Component {
     );
   }
 }
+/*
 function Background() {
   return (
     <div>
@@ -40,7 +41,7 @@ function Background() {
       <h1 className="plan-title">Plan</h1>
     </div>
   );
-}
+}*/
 
 export default Calendar;
 
