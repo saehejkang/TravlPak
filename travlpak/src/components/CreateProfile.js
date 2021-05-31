@@ -2,7 +2,7 @@ import "../css/CreateProfile.css";
 
 import { Component } from "react";
 import { Link } from "react-router-dom";
-import update from 'react-addons-update';
+import update from "react-addons-update";
 
 import uploadIcon from "../resources/CreateProfile-Resources/uploadIcon.svg";
 import arrowButton from "../resources/CreateProfile-Resources/arrowButton.svg";
@@ -34,9 +34,7 @@ import artS from "../resources/tags-Resources/selected/art.svg";
 import urbanSettingsU from "../resources/tags-Resources/unselected/urbanSettings.svg";
 import urbanSettingsS from "../resources/tags-Resources/selected/urbanSettings.svg";
 
-import fire from '../firebase.js'
-
-
+import fire from "../firebase.js";
 
 class CreateProfile extends Component {
   state = {
@@ -44,93 +42,212 @@ class CreateProfile extends Component {
     location: "",
     bio: "",
     age: 0,
-    interests: [false, false, false, false,
-        false, false, false, false, false,
-        false, false, false, false]
+    interests: [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+    ],
   };
 
   changeState(value) {
-    this.setState(update(this.state, {
-      interests: {
-        [value]: {
-          $set : !this.state.interests[value]
-        }
-      }
-    }));
+    this.setState(
+      update(this.state, {
+        interests: {
+          [value]: {
+            $set: !this.state.interests[value],
+          },
+        },
+      })
+    );
   }
 
-  chooseFile = event => {
-    console.log(event.target.files[0])
+  chooseFile = (event) => {
+    console.log(event.target.files[0]);
     this.setState({
       profilePicture: event.target.files[0],
-    })
-  }
+    });
+  };
 
   firebase_update = (user) => {
-      let profilePicture = this.state.profilePicture
-      let location  = this.state.location
-      let bio = this.state.bio
-      let age = this.state.age
-      let interests = this.state.interests
+    let profilePicture = this.state.profilePicture;
+    let location = this.state.location;
+    let bio = this.state.bio;
+    //let age = this.state.age
+    let interests = this.state.interests;
 
-      var db = fire.firestore()
+    var db = fire.firestore();
 
-      fire.auth().onAuthStateChanged(function(user) {
-        if (user) {
-          fire.storage().ref('ProfilePicutres/' + user.uid).put(profilePicture).then(function () {
-            console.log('uploaded picture')
-          }).catch(error => {
-            console.log(error.message)
+    fire.auth().onAuthStateChanged(function (user) {
+      if (user) {
+        fire
+          .storage()
+          .ref("ProfilePicutres/" + user.uid)
+          .put(profilePicture)
+          .then(function () {
+            console.log("uploaded picture");
           })
+          .catch((error) => {
+            console.log(error.message);
+          });
 
-      db.collection("Users").doc(user.uid).update({
-        Location: location,
-        bio: bio,
-        interests: interests
-        }, {merge: true}).then(() => {
-          console.log("Document successfully updated!")
-        })
-        .catch((error) => {
-           console.log("Error updating documents: ", error)
-        })
-        } else {
-           console.log("User not logged in")
-        }
-      });
-      console.log(this.state.email)
-  }
+        db.collection("Users")
+          .doc(user.uid)
+          .update(
+            {
+              Location: location,
+              bio: bio,
+              interests: interests,
+            },
+            { merge: true }
+          )
+          .then(() => {
+            console.log("Document successfully updated!");
+          })
+          .catch((error) => {
+            console.log("Error updating documents: ", error);
+          });
+      } else {
+        console.log("User not logged in");
+      }
+    });
+    console.log(this.state.email);
+  };
 
   render() {
     return (
       <div className="create-profile">
         <div className="add-profile-pic">Add a Profile Picture</div>
-        <input style={{display: 'none'}} type="file" onChange={this.chooseFile} ref={fileInput => this.fileInput = fileInput}/>
-        <img className="upload-icon" src={uploadIcon} alt="upload icon" onClick={() => this.fileInput.click()}/>
-        
+        <input
+          style={{ display: "none" }}
+          type="file"
+          onChange={this.chooseFile}
+          ref={(fileInput) => (this.fileInput = fileInput)}
+        />
+        <img
+          className="upload-icon"
+          src={uploadIcon}
+          alt="upload icon"
+          onClick={() => this.fileInput.click()}
+        />
+
         <div className="where-travel">Where will you travel from?</div>
-        <input placeholder="San Luis Obispo, CA, US" className="location-box" type="text" value={this.location} onChange={(e) => this.setState({location: e.target.value })}/>
-        
-        <div className="bio-prompt">What would you like other travelers to know about you?</div>
-        <textarea placeholder="i’m a freelance photographer trying to make it to 100 countries!" className="bio-box" type="text" value={this.bio} onChange={(e) => this.setState({bio: e.target.value})}/>
-        
+        <input
+          placeholder="San Luis Obispo, CA, US"
+          className="location-box"
+          type="text"
+          value={this.location}
+          onChange={(e) => this.setState({ location: e.target.value })}
+        />
+
+        <div className="bio-prompt">
+          What would you like other travelers to know about you?
+        </div>
+        <textarea
+          placeholder="i’m a freelance photographer trying to make it to 100 countries!"
+          className="bio-box"
+          type="text"
+          value={this.bio}
+          onChange={(e) => this.setState({ bio: e.target.value })}
+        />
+
         <div className="interests-prompt">Tell us about your Interests!</div>
         <div className="create-profile-tags">
-          <img className="photography" src={this.state.interests[0] ? photogtaphyS : photogtaphyU} alt="photography tag" onClick={(e) => this.changeState(0)}/>
-          <img className="viticulture" src={this.state.interests[1] ? viticultureS : viticultureU} alt="viticulture tag" onClick={(e) => this.changeState(1)}/>
-          <img className="nature" src={this.state.interests[2] ? natureS : natureU} alt="nature tag" onClick={(e) => this.changeState(2)}/>
-          <img className="hiking" src={this.state.interests[3] ? hikingS : hikingU} alt="hiking tag" onClick={(e) => this.changeState(3)}/>
-          <img className="skiing" src={this.state.interests[4] ? skiingS : skiingU} alt="skiing tag" onClick={(e) => this.changeState(4)}/>
-          <img className="mountain-biking" src={this.state.interests[5] ? mountainBikingS : mountainBikingU} alt="mountain biking tag" onClick={(e) => this.changeState(5)}/>
-          <img className="beaches" src={this.state.interests[6] ? beachesS : beachesU} alt="beaches tag" onClick={(e) => this.changeState(6)}/>
-          <img className="architecture" src={this.state.interests[7] ? architectureS : architectureU} alt="architecture tag" onClick={(e) => this.changeState(7)}/>
-          <img className="surfing" src={this.state.interests[8] ? surfingS : surfingU} alt="surfing tag" onClick={(e) => this.changeState(8)}/>
-          <img className="botany" src={this.state.interests[9] ? botanyS : botanyU} alt="botany tag" onClick={(e) => this.changeState(9)}/>
-          <img className="history2" src={this.state.interests[10] ? historyS : historyU} alt="history tag" onClick={(e) => this.changeState(10)}/>
-          <img className="art" src={this.state.interests[11] ? artS : artU} alt="art tag" onClick={(e) => this.changeState(11)}/>
-          <img className="urban-settings" src={this.state.interests[12] ? urbanSettingsS : urbanSettingsU} alt="urban settings tag" onClick={(e) => this.changeState(12)}/>
+          <img
+            className="photography"
+            src={this.state.interests[0] ? photogtaphyS : photogtaphyU}
+            alt="photography tag"
+            onClick={(e) => this.changeState(0)}
+          />
+          <img
+            className="viticulture"
+            src={this.state.interests[1] ? viticultureS : viticultureU}
+            alt="viticulture tag"
+            onClick={(e) => this.changeState(1)}
+          />
+          <img
+            className="nature"
+            src={this.state.interests[2] ? natureS : natureU}
+            alt="nature tag"
+            onClick={(e) => this.changeState(2)}
+          />
+          <img
+            className="hiking"
+            src={this.state.interests[3] ? hikingS : hikingU}
+            alt="hiking tag"
+            onClick={(e) => this.changeState(3)}
+          />
+          <img
+            className="skiing"
+            src={this.state.interests[4] ? skiingS : skiingU}
+            alt="skiing tag"
+            onClick={(e) => this.changeState(4)}
+          />
+          <img
+            className="mountain-biking"
+            src={this.state.interests[5] ? mountainBikingS : mountainBikingU}
+            alt="mountain biking tag"
+            onClick={(e) => this.changeState(5)}
+          />
+          <img
+            className="beaches"
+            src={this.state.interests[6] ? beachesS : beachesU}
+            alt="beaches tag"
+            onClick={(e) => this.changeState(6)}
+          />
+          <img
+            className="architecture"
+            src={this.state.interests[7] ? architectureS : architectureU}
+            alt="architecture tag"
+            onClick={(e) => this.changeState(7)}
+          />
+          <img
+            className="surfing"
+            src={this.state.interests[8] ? surfingS : surfingU}
+            alt="surfing tag"
+            onClick={(e) => this.changeState(8)}
+          />
+          <img
+            className="botany"
+            src={this.state.interests[9] ? botanyS : botanyU}
+            alt="botany tag"
+            onClick={(e) => this.changeState(9)}
+          />
+          <img
+            className="history2"
+            src={this.state.interests[10] ? historyS : historyU}
+            alt="history tag"
+            onClick={(e) => this.changeState(10)}
+          />
+          <img
+            className="art"
+            src={this.state.interests[11] ? artS : artU}
+            alt="art tag"
+            onClick={(e) => this.changeState(11)}
+          />
+          <img
+            className="urban-settings"
+            src={this.state.interests[12] ? urbanSettingsS : urbanSettingsU}
+            alt="urban settings tag"
+            onClick={(e) => this.changeState(12)}
+          />
         </div>
         <Link to="home">
-          <img className="arrow-button" src={arrowButton} alt="arrow button" onClick={this.firebase_update} />
+          <img
+            className="arrow-button"
+            src={arrowButton}
+            alt="arrow button"
+            onClick={this.firebase_update}
+          />
         </Link>
       </div>
     );
