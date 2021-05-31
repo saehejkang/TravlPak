@@ -77,12 +77,13 @@ class CreateProfile extends Component {
 
       fire.auth().onAuthStateChanged(function(user) {
         if (user) {
-          fire.storage().ref('ProfilePicutres/' + user.uid).put(profilePicture).then(function () {
-            console.log('uploaded picture')
-          }).catch(error => {
-            console.log(error.message)
-          })
-
+          if (profilePicture != null) {
+            fire.storage().ref('ProfilePicutres/' + user.uid).put(profilePicture).then(function () {
+              console.log('uploaded picture')
+            }).catch(error => {
+              console.log(error.message)
+            })
+          }
       db.collection("Users").doc(user.uid).update({
         Location: location,
         bio: bio,
