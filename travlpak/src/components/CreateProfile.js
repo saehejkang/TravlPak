@@ -87,40 +87,30 @@ class CreateProfile extends Component {
 
     var db = fire.firestore();
 
-    fire.auth().onAuthStateChanged(function (user) {
-      if (user) {
-        fire
-          .storage()
-          .ref("ProfilePicutres/" + user.uid)
-          .put(profilePicture)
-          .then(function () {
-            console.log("uploaded picture");
-          })
-          .catch((error) => {
-            console.log(error.message);
-          });
-
-        db.collection("Users")
-          .doc(user.uid)
-          .update(
-            {
-              Location: location,
-              bio: bio,
-              interests: interests,
-            },
-            { merge: true }
-          )
-          .then(() => {
-            console.log("Document successfully updated!");
-          })
-          .catch((error) => {
-            console.log("Error updating documents: ", error);
-          });
-      } else {
-        console.log("User not logged in");
-      }
-    });
-    console.log(this.state.email);
+      fire.auth().onAuthStateChanged(function(user) {
+        if (user) {
+          if (profilePicture != null) {
+            fire.storage().ref('ProfilePicutres/' + user.uid).put(profilePicture).then(function () {
+              console.log('uploaded picture')
+            }).catch(error => {
+              console.log(error.message)
+            })
+          }
+      db.collection("Users").doc(user.uid).update({
+        Location: location,
+        bio: bio,
+        interests: interests
+        }, {merge: true}).then(() => {
+          console.log("Document successfully updated!")
+        })
+        .catch((error) => {
+           console.log("Error updating documents: ", error)
+        })
+        } else {
+           console.log("User not logged in")
+        }
+      });
+      console.log(this.state.email)
   };
 
   render() {
