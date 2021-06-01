@@ -8,17 +8,18 @@ import exploreIcon from "../resources/tabBar-Resources/exploreIcon.svg";
 import connectIcon from "../resources/tabBar-Resources/connectIcon.svg";
 import profileIcon from "../resources/tabBar-Resources/profile.svg";
 import planPressed from "../resources/tabBar-Resources/planPressed.svg";
-//import gradient from "../resources/tabBar-Resources/gradient.svg";
 
 import exitIcon from "../resources/NewTrip-Resources/exitIcon.svg";
 import newTrip from "../resources/NewTrip-Resources/newTrip.svg";
 import removeIcon from "../resources/NewTrip-Resources/xIcon.svg";
+
 import addIcon from "../resources/NewTrip-Resources/addIcon.svg";
 import arrowButton from "../resources/CreateProfile-Resources/arrowButton.svg";
 import fire from "../firebase.js";
 import update from 'react-addons-update';
 
 const db = fire.firestore();
+
 
 class NewTrip extends Component {
   state = {
@@ -29,6 +30,43 @@ class NewTrip extends Component {
     percentPlanned: 0,
     participants: [],
   };
+
+
+   firebase_update = (user) => {
+        let name = this.state.name
+        let destination  = this.state.destination
+        let startDate = this.state.startDate
+        let endDate = this.state.endDate
+        let percentPlanned = this.state.percentPlanned
+        let participants = this.state.participants
+
+        let tripnum = (Math.floor((Math.random() * 100000) + 1)).toString()
+
+        console.log(tripnum)
+
+        var db = fire.firestore()
+
+        fire.auth().onAuthStateChanged(function(user) {
+          if (user) {
+
+        db.collection("trips").doc(tripnum).set({
+          name: name,
+          Destination: destination,
+          startDate: startDate,
+          endDate: endDate,
+          percentPlanned: percentPlanned,
+          participants: participants,
+          }).then(() => {
+            console.log("Document successfully updated!")
+          })
+          .catch((error) => {
+             console.log("Error updating documents: ", error)
+          })
+          } else {
+             console.log("User not logged in")
+          }
+        });
+    }
 
   async componentDidMount() {
     this.getUserData()
@@ -100,6 +138,7 @@ class NewTrip extends Component {
   render() {
     return (
       <div className="plan">
+
         <img className="new-trip-bg" src={newTrip} alt="new trip" />
 
         <Link to="/plan">
@@ -155,7 +194,8 @@ class NewTrip extends Component {
         </div>
 
         <Link to="/plan">
-          <img className="create-trip-button" src={arrowButton} alt="arrow button" />     
+          <img className="create-trip-button" src={arrowButton} alt="arrow button" onClick={this.firebase_update}/>     
+
         </Link>
 
         <TabBar />
@@ -170,6 +210,7 @@ function TabBar() {
     <div className="tab-bar">
       <div className="white-box">
         <Link to="/home">
+
           <img
             className="plan-profile-icon"
             src={profileIcon}
