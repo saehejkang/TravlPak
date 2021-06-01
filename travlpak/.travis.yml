@@ -1,5 +1,5 @@
 language: node_js
-node_js: -11.6.0
+node_js: "12.16.1"
 cache: npm
 before_install:
 install:
@@ -10,5 +10,6 @@ deploy:
   provider: pages
   skip-cleanup: true
   github-token: $GITHUB_TOKEN
+  local_dir: build
   on:
-    branch: gh-pages
+    branch: master

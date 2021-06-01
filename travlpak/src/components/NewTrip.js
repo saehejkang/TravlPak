@@ -8,7 +8,7 @@ import exploreIcon from "../resources/tabBar-Resources/exploreIcon.svg";
 import connectIcon from "../resources/tabBar-Resources/connectIcon.svg";
 import profileIcon from "../resources/tabBar-Resources/profile.svg";
 import planPressed from "../resources/tabBar-Resources/planPressed.svg";
-import gradient from "../resources/tabBar-Resources/gradient.svg";
+//import gradient from "../resources/tabBar-Resources/gradient.svg";
 
 import exitIcon from "../resources/NewTrip-Resources/exitIcon.svg";
 import newTrip from "../resources/NewTrip-Resources/newTrip.svg";
@@ -100,19 +100,42 @@ class NewTrip extends Component {
   render() {
     return (
       <div className="plan">
-        <img className="new-trip-bg" src={newTrip} alt="new trip"/>
+        <img className="new-trip-bg" src={newTrip} alt="new trip" />
 
         <Link to="/plan">
-            <img className="green-exit-icon" src={exitIcon} alt="exit icon"/>
+          <img className="green-exit-icon" src={exitIcon} alt="exit icon" />
         </Link>
-        
-        <input placeholder="Spring Break :)" className="trip-name-input" type="text" value={this.name} onChange={(e) => this.setState({ name: e.target.value })}/>
-        <input placeholder="San Luis Obispo, CA, US" className="destination-input" type="location" value={this.destination} onChange={(e) => this.setState({ destination: e.target.value })}/>
 
-        <input className="start-date-input" type="date" value={this.destination} onChange={(e) => this.setState({ destination: e.target.value })}/>
-        <input className="end-date-input" type="date" value={this.destination} onChange={(e) => this.setState({ destination: e.target.value })}/>
+        <input
+          placeholder="Spring Break :)"
+          className="trip-name-input"
+          type="text"
+          value={this.name}
+          onChange={(e) => this.setState({ name: e.target.value })}
+        />
+        <input
+          placeholder="San Luis Obispo, CA, US"
+          className="destination-input"
+          type="location"
+          value={this.destination}
+          onChange={(e) => this.setState({ destination: e.target.value })}
+        />
+
+        <input
+          className="start-date-input"
+          type="date"
+          value={this.destination}
+          onChange={(e) => this.setState({ destination: e.target.value })}
+        />
+        <input
+          className="end-date-input"
+          type="date"
+          value={this.destination}
+          onChange={(e) => this.setState({ destination: e.target.value })}
+        />
 
         <div className="friends-scrollable">
+
           {this.state.participants.map(
             (participant, index) => (
                 <div className={"participant-" + participant.friendNumber}>
@@ -147,17 +170,21 @@ function TabBar() {
     <div className="tab-bar">
       <div className="white-box">
         <Link to="/home">
-            <img className="plan-profile-icon" src={profileIcon} alt="plan icon"/>
+          <img
+            className="plan-profile-icon"
+            src={profileIcon}
+            alt="plan icon"
+          />
         </Link>
-        
+
         <Link to="/connect">
-            <img className="connect-icon" src={connectIcon} alt="connect icon"/>
+          <img className="connect-icon" src={connectIcon} alt="connect icon" />
         </Link>
 
         <Link to="/explore">
-            <img className="explore-icon" src={exploreIcon} alt="explore icon"/>
+          <img className="explore-icon" src={exploreIcon} alt="explore icon" />
         </Link>
-        
+
         <img className="plan-pressed" src={planPressed} alt="plan pressed" />
       </div>
     </div>
