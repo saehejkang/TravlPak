@@ -1,0 +1,10 @@
+.plan-pressed {
+    position: absolute;
+    left: 144px;
+    top: 16px;
+}
+.plan-profile-icon {
+    position: absolute;
+    left: 288px;
+    top: 24px;
+}

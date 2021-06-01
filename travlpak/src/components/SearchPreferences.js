@@ -4,6 +4,7 @@ import "../css/tabBarProfile.css";
 
 import { Link } from "react-router-dom";
 import { Component } from "react";
+import update from "react-addons-update";
 
 import whiteBackground from "../resources/background-Resources/whiteBackground.svg";
 import dotsStarsBackground from "../resources/background-Resources/dotsStars.svg";
@@ -44,54 +45,182 @@ import artS from "../resources/tags-Resources/selected/art.svg";
 import urbanSettingsU from "../resources/tags-Resources/unselected/urbanSettings.svg";
 import urbanSettingsS from "../resources/tags-Resources/selected/urbanSettings.svg";
 
+import fire from "../firebase.js";
+
 class SearchPreferences extends Component {
   state = {
     location: "",
-    photography: false,
-    viticulture: false,
-    nature: false,
-    hiking: false,
-    skiing: false,
-    mountainBiking: false,
-    beaches: false,
-    architecture: false,
-    surfing: false,
-    botany: false,
-    history: false,
-    art: false,
-    urbanSettings: false,
+    interests: [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+    ],
   };
 
-  changeState(interest) {
-    this.state.[interest] ? this.setState({[interest]: false}) : this.setState({[interest]: true})
+  changeState(value) {
+    this.setState(
+      update(this.state, {
+        interests: {
+          [value]: {
+            $set: !this.state.interests[value],
+          },
+        },
+      })
+    );
+    this.firebase_update();
   }
 
+  firebase_update = (user) => {
+    let interests = this.state.interests;
+    let location = this.state.location;
+
+    var db = fire.firestore();
+
+    fire.auth().onAuthStateChanged(function (user) {
+      if (user) {
+        db.collection("Users")
+          .doc(user.uid)
+          .update(
+            {
+              interests: interests,
+              Location: location,
+            },
+            { merge: true }
+          )
+          .then(() => {
+            console.log("Document successfully updated!");
+          })
+          .catch((error) => {
+            console.log("Error updating documents: ", error);
+          });
+      } else {
+        console.log("User not logged in");
+      }
+    });
+    console.log(this.state.email);
+  };
+
   render() {
+    /*var db = fire.firestore()
+
+             fire.auth().onAuthStateChanged(function(user) {
+               if (user) {
+                  var intr = db.collection("Users").doc(user.uid).get(interests);
+                  this.setState(interests: intr);
+               }
+             }
+             });*/
     return (
       <div className="search-preferences">
         <Background />
         <div className="my-interests">My Interests</div>
-        
+
         <div className="search-preferences-tags">
-          <img className="photography" src={this.state.photography ? photogtaphyS : photogtaphyU} alt="photography tag" onClick={(e) => this.changeState("photography")}/>
-          <img className="viticulture" src={this.state.viticulture ? viticultureS : viticultureU} alt="viticulture tag" onClick={(e) => this.changeState("viticulture")}/>
-          <img className="nature" src={this.state.nature ? natureS : natureU} alt="nature tag" onClick={(e) => this.changeState("nature")}/>
-          <img className="hiking" src={this.state.hiking ? hikingS : hikingU} alt="hiking tag" onClick={(e) => this.changeState("hiking")}/>
-          <img className="skiing" src={this.state.skiing ? skiingS : skiingU} alt="skiing tag" onClick={(e) => this.changeState("skiing")}/>
-          <img className="mountain-biking" src={this.state.mountainBiking ? mountainBikingS : mountainBikingU} alt="mountain biking tag" onClick={(e) => this.changeState("mountainBiking")}/>
-          <img className="beaches" src={this.state.beaches ? beachesS : beachesU} alt="beaches tag" onClick={(e) => this.changeState("beaches")}/>
-          <img className="architecture" src={this.state.architecture ? architectureS : architectureU} alt="architecture tag" onClick={(e) => this.changeState("architecture")}/>
-          <img className="surfing" src={this.state.surfing ? surfingS : surfingU} alt="surfing tag" onClick={(e) => this.changeState("surfing")}/>
-          <img className="botany" src={this.state.botany ? botanyS : botanyU} alt="botany tag" onClick={(e) => this.changeState("botany")}/>
-          <img className="history2" src={this.state.history ? historyS : historyU} alt="history tag" onClick={(e) => this.changeState("history")}/>
-          <img className="art" src={this.state.art ? artS : artU} alt="art tag" onClick={(e) => this.changeState("art")}/>
-          <img className="urban-settings" src={this.state.urbanSettings ? urbanSettingsS : urbanSettingsU} alt="urban settings tag" onClick={(e) => this.changeState("urbanSettings")}/>
+          <img
+            className="photography"
+            src={this.state.interests[0] ? photogtaphyS : photogtaphyU}
+            alt="photography tag"
+            onClick={(e) => this.changeState(0)}
+          />
+          <img
+            className="viticulture"
+            src={this.state.interests[1] ? viticultureS : viticultureU}
+            alt="viticulture tag"
+            onClick={(e) => this.changeState(1)}
+          />
+          <img
+            className="nature"
+            src={this.state.interests[2] ? natureS : natureU}
+            alt="nature tag"
+            onClick={(e) => this.changeState(2)}
+          />
+          <img
+            className="hiking"
+            src={this.state.interests[3] ? hikingS : hikingU}
+            alt="hiking tag"
+            onClick={(e) => this.changeState(3)}
+          />
+          <img
+            className="skiing"
+            src={this.state.interests[4] ? skiingS : skiingU}
+            alt="skiing tag"
+            onClick={(e) => this.changeState(4)}
+          />
+          <img
+            className="mountain-biking"
+            src={this.state.interests[5] ? mountainBikingS : mountainBikingU}
+            alt="mountain biking tag"
+            onClick={(e) => this.changeState(5)}
+          />
+          <img
+            className="beaches"
+            src={this.state.interests[6] ? beachesS : beachesU}
+            alt="beaches tag"
+            onClick={(e) => this.changeState(6)}
+          />
+          <img
+            className="architecture"
+            src={this.state.interests[7] ? architectureS : architectureU}
+            alt="architecture tag"
+            onClick={(e) => this.changeState(7)}
+          />
+          <img
+            className="surfing"
+            src={this.state.interests[8] ? surfingS : surfingU}
+            alt="surfing tag"
+            onClick={(e) => this.changeState(8)}
+          />
+          <img
+            className="botany"
+            src={this.state.interests[9] ? botanyS : botanyU}
+            alt="botany tag"
+            onClick={(e) => this.changeState(9)}
+          />
+          <img
+            className="history2"
+            src={this.state.interests[10] ? historyS : historyU}
+            alt="history tag"
+            onClick={(e) => this.changeState(10)}
+          />
+          <img
+            className="art"
+            src={this.state.interests[11] ? artS : artU}
+            alt="art tag"
+            onClick={(e) => this.changeState(11)}
+          />
+          <img
+            className="urban-settings"
+            src={this.state.interests[12] ? urbanSettingsS : urbanSettingsU}
+            alt="urban settings tag"
+            onClick={(e) => this.changeState(12)}
+          />
         </div>
 
         <div className="my-location">My Location</div>
-        <input placeholder="San Luis Obispo, CA, US" className="my-location-box" type="location" value={this.location} onChange={(e) => this.setState({location: e.target.value })}/>
+        <input
+          placeholder="San Luis Obispo, CA, US"
+          className="my-location-box"
+          type="location"
+          value={this.location}
+          onChange={
+            (e) =>
+              this.setState({
+                location: e.target.value,
+              }) /*, this.firebase_update*/
+          }
+        />
 
-        <img className="scooter-img" src={scooterImg} alt="scooter img"/>
+        <img className="scooter-img" src={scooterImg} alt="scooter img" />
         <TabBar />
       </div>
     );
@@ -104,7 +233,11 @@ function Background() {
     <div>
       <div className="green"></div>
       <img className="white" src={whiteBackground} alt="white background" />
-      <img className="dots-stars" src={dotsStarsBackground} alt="dots stars background" />
+      <img
+        className="dots-stars"
+        src={dotsStarsBackground}
+        alt="dots stars background"
+      />
       <h1 className="title">Search Preferences</h1>
       <Link to="/home">
         <img className="x" src={xIcon} alt="x icon" />
@@ -118,11 +251,14 @@ function TabBar() {
     <div className="tab-bar">
       <div className="white-box">
         <div className="tab-not-pressed">
-          <img className="plan-icon" src={planIcon} alt="plan icon"/>
-          <img className="connect-icon" src={connectIcon} alt="connect icon"/>
-          <img className="explore-icon" src={exploreIcon} alt="explore icon"/>
+          <img className="plan-icon" src={planIcon} alt="plan icon" />
+          <img className="connect-icon" src={connectIcon} alt="connect icon" />
+          <img className="explore-icon" src={exploreIcon} alt="explore icon" />
         </div>
-        <div className="tab-pressed" style={{ backgroundImage: `url(${profilePressed})` }}>
+        <div
+          className="tab-pressed"
+          style={{ backgroundImage: `url(${profilePressed})` }}
+        >
           <img className="profile-icon" src={profileIcon} alt="profile icon" />
           <div className="profile">Profile</div>
         </div>

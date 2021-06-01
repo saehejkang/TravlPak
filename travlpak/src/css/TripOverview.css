@@ -1,0 +1,106 @@
+.trip-overview {
+    position: absolute;
+    left: 36px;
+    top: 57px;
+}
+.overview-location {
+    position: absolute;
+    left: 184px;
+    top: 131px;
+
+    font-family: SF Pro Display;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    
+    color: #EC744A;
+}
+.overview-start-date {
+    position: absolute;
+    left: 84px;
+    top: 166px;
+
+    font-family: SF Pro Display;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    
+    color: #EC744A;
+}
+.overview-end-date {
+    position: absolute;
+    left: 165px;
+    top: 166px;
+
+    font-family: SF Pro Display;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    
+    color: #EC744A;
+}
+.overview-notes-box {
+    position: absolute;
+    width: 342px;
+    height: 247px;
+    left: 36px;
+    top: 255px;
+    padding: 16px 22px 16px 22px;
+    
+    Font-family: SF Pro Display;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+
+    resize: none;
+    
+    border: 1px solid #BDCAC2;
+    color: #424D47;
+    border-radius: 20px;
+}
+.trip-itinerary-button {
+    position: absolute;
+    left: 36px;
+    top: 530px;
+}
+.overview-participant-0 {
+    position: absolute;
+    left: 36px;
+    top: 619px;
+}
+.overview-participant-1 {
+    position: absolute;
+    left: 94px;
+    top: 619px;
+}
+.overview-participant-2 {
+    position: absolute;
+    left: 152px;
+    top: 619px;
+}
+.overview-participant-3 {
+    position: absolute;
+    left: 210px;
+    top: 619px;
+}
+.overview-participant-4 {
+    position: absolute;
+    left: 268px;
+    top: 619px;
+}
+.dots-three {
+    position: absolute;
+    left: 326px;
+    top: 619px;
+}
+.delete-trip-button {
+    position: absolute;
+    width: 183px;
+    height: 45px;
+    left: 115px;
+    top: 700px;
+}

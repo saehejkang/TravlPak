@@ -1,0 +1,285 @@
+.message-center-title {
+    position: absolute;
+    left: 120px;
+    top: 57px; 
+
+    font-family: SF Pro Display;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    /* identical to box height */
+    
+    
+    color: #FFFFFF;
+}
+.white-exit-icon {
+    position: absolute;
+    left: 352px;
+    top: 57px;
+}
+.selection-bar-message-center {
+    position: absolute;
+    width: 342px;
+    height: 50px;
+    left: 36px;
+    top: 160px;
+}
+.trips-selector {
+    position: absolute;
+    height: 24px;
+    left: 283px;
+    top: 175px;
+    
+    font-family: SF Pro Text;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+    
+    text-align: center;
+    
+    color: #BDCAC2;    
+}
+.friends-selector {
+    position: absolute;
+    height: 24px;
+    left: 85px;
+    top: 175px;
+    
+    font-family: SF Pro Text;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+    
+    text-align: center;
+    
+    color: #BDCAC2;    
+}
+.message-friend-name {
+    position: absolute;
+    left: 68px;
+    top: 4px;
+    
+    font-family: SF Pro Text;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 21px;
+    
+    color: #424D47;
+}
+.message-trip-name {
+    position: absolute;
+    left: 8px;
+    top: 4px;
+    
+    font-family: SF Pro Text;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 21px;
+    
+    color: #424D47;
+}
+.message-friend-profile-picture {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    left: 8px;
+    top: 0px;
+    border-radius: 100px;
+}
+.message-new {
+    position: absolute;
+    height: 20px;
+    width: 263px;
+    left: 68px;
+    top: 24px;
+    
+    font-family: SF Pro Text;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 14px;
+    line-height: 20px;
+    /* identical to box height, or 143% */
+    
+    
+    color: #424D47;    
+}
+.message-trips-new {
+    position: absolute;
+    height: 20px;
+    width: 263px;
+    left: 8px;
+    top: 24px;
+    
+    font-family: SF Pro Text;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 14px;
+    line-height: 20px;
+    /* identical to box height, or 143% */
+    
+    
+    color: #424D47;    
+}
+.message-old {
+    position: absolute;
+    height: 20px;
+    width: 263px;
+    left: 68px;
+    top: 24px;
+    
+    font-family: SF Pro Text;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    /* identical to box height, or 143% */
+    
+    
+    color: #424D47;    
+}
+.message-trips-old {
+    position: absolute;
+    height: 20px;
+    width: 263px;
+    left: 8px;
+    top: 24px;
+    
+    font-family: SF Pro Text;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    /* identical to box height, or 143% */
+    
+    
+    color: #424D47;    
+}
+.message-divider {
+    position: absolute;
+    width: 358px;
+    height: 0px;
+    left: 0px;
+    top: 60px;
+}
+.message-friend-0 {
+    position: absolute;
+    width: 358px;
+    height: 61px;
+    left: 28px;
+    top: 222px;    
+}
+.message-friend-1 {
+    position: absolute;
+    width: 358px;
+    height: 61px;
+    left: 28px;
+    top: 299px;    
+}
+.message-friend-2 {
+    position: absolute;
+    width: 358px;
+    height: 61px;
+    left: 28px;
+    top: 376px;    
+}
+.message-friend-3 {
+    position: absolute;
+    width: 358px;
+    height: 61px;
+    left: 28px;
+    top: 453px;    
+}
+.message-friend-4 {
+    position: absolute;
+    width: 358px;
+    height: 61px;
+    left: 28px;
+    top: 530px;    
+}
+.message-friend-5 {
+    position: absolute;
+    width: 358px;
+    height: 61px;
+    left: 28px;
+    top: 607px;    
+}
+.message-friend-6 {
+    position: absolute;
+    width: 358px;
+    height: 61px;
+    left: 28px;
+    top: 684px;    
+}
+.message-friend-7 {
+    position: absolute;
+    width: 358px;
+    height: 61px;
+    left: 28px;
+    top: 761px;    
+}
+.message-friend-8 {
+    position: absolute;
+    width: 358px;
+    height: 61px;
+    left: 28px;
+    top: 838px;    
+}
+.message-friend-9 {
+    position: absolute;
+    width: 358px;
+    height: 61px;
+    left: 28px;
+    top: 761px;    
+}
+.message-friend-10 {
+    position: absolute;
+    width: 358px;
+    height: 61px;
+    left: 28px;
+    top: 915px;    
+}
+.message-friend-11 {
+    position: absolute;
+    width: 358px;
+    height: 61px;
+    left: 28px;
+    top: 992px;    
+}
+.message-friend-12 {
+    position: absolute;
+    width: 358px;
+    height: 61px;
+    left: 28px;
+    top: 1069px;    
+}
+.trip-participant-picture-0 {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    left: 302px;
+    top: 0px;
+    border-radius: 100px;
+}
+.trip-participant-picture-1 {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    left: 286px;
+    top: 0px;
+    border-radius: 100px;
+}
+.trip-participant-picture-2 {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    left: 270px;
+    top: 0px;
+    border-radius: 100px;
+}

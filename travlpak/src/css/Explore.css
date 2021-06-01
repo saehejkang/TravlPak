@@ -1,0 +1,151 @@
+.explore {
+    position: absolute;
+    width: 414.03px;
+    height: 896px;
+}
+.explore-title {
+    position: absolute;
+    left: 167px;
+    top: 57px;
+
+    font-family: SF Pro Display;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    /* identical to box height */
+  
+  
+    color: #FFFFFF;  
+}
+.search-icon {
+    position: absolute;
+    width: 215px;
+    height: 260px;
+    left: 36px;
+    top: 178px;    
+}
+.keyword-input {
+    position: absolute;
+    width: 342px;
+    height: 39px;
+    left: 36px;
+    top: 168px;
+    padding: 0px 31px 0px 38px;
+
+    font-family: SF Pro Display;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    
+    color: #424D47;
+    
+    background: transparent;
+    border: 1px solid #BDCAC2;
+    box-sizing: border-box;
+    border-radius: 27px;
+}
+.min-distance {
+    position: absolute;
+    width: 85px;
+    height: 35px;
+    left: 36px;
+    top: 255px;
+    padding: 0px 7px 0px 7px;
+
+    font-family: SF Pro Display;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    
+    color: #424D47;    
+    
+    border: 1px solid #BDCAC2;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+.max-distance {
+    position: absolute;
+    width: 85px;
+    height: 35px;
+    left: 140px;
+    top: 255px;
+    padding: 0px 7px 0px 7px;
+
+    font-family: SF Pro Display;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    
+    color: #424D47;    
+    
+    border: 1px solid #BDCAC2;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.min-rating-slider {
+    -webkit-appearance: none;
+    position: absolute;
+    left: 36px;
+    top: 359px;
+    width: 342px;
+    height: 4px;
+}
+.min-rating-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 8px;
+    background: #638073;
+}
+.min-rating {
+    position: absolute;
+    width: 45px;
+    height: 17px;
+    right: 36px;
+    top: 336px;
+    
+    font-family: SF Pro Text;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+    
+    
+    color: #BDCAC2;    
+}
+.num-reviews {
+    position: absolute;
+    width: 85px;
+    height: 35px;
+    left: 109px;
+    top: 410px;
+    padding: 0px 7px 0px 7px;
+
+    font-family: SF Pro Display;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    
+    color: #424D47;    
+    
+    border: 1px solid #BDCAC2;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+.search-button {
+    position: absolute;
+    left: 145px;
+    top: 473px;
+}
+.street {
+    position: absolute;
+    left: 12px;
+    top: 533px;
+}

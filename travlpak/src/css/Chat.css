@@ -1,0 +1,79 @@
+.chat-page {
+    position: relative;
+    width: 414px;
+    height: 896px;
+}
+.back-to-message-center {
+    position: absolute;
+    left: 40px;
+    top: 57px;
+}
+.chat-name {
+    position: absolute;
+    top: 55px;
+    left: 139px;
+    
+    font-family: SF Pro Display;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+    /* identical to box height */
+    
+    text-align: center;
+    
+    color: #2A6049;
+}
+.chat-box {
+    position: absolute;
+    width: 328px;
+    height: 45px;
+    left: 43px;
+    bottom: 43px;
+    padding-left: 31px;
+    padding-right: 31px;
+    
+    font-family: SF Pro Display;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+  
+    border: 0px;
+    background: #F3F3F3;
+    box-sizing: border-box;
+    border-radius: 27px;
+    color: #424D47;
+}
+.example-profile-pic1 {
+    position: absolute;
+    left: 16px;
+    top: 620px;
+    width: 48px;
+    height: 48px;
+
+    border-radius: 100px;
+}
+.example-recieved {
+    position: absolute;
+    width: 207px;
+    height: 83px;
+    left: 70px;
+    top: 620px;
+}
+.example-profile-pic2 {
+    position: absolute;
+    left: 350px;
+    top: 724px;
+    width: 48px;
+    height: 48px;
+
+    border-radius: 100px;
+}
+.example-sent {
+    position: absolute;
+    width: 233px;
+    height: 48px;
+    left: 107px;
+    top: 724px;
+}

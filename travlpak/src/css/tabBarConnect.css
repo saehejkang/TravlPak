@@ -1,0 +1,15 @@
+.connect-pressed {
+    position: absolute;
+    left: 84px;
+    top: 16px;
+}
+.connect-plan-icon {
+    position: absolute;
+    left: 227px;
+    top: 24px;
+}
+.connect-profile-icon {
+    position: absolute;
+    left: 288px;
+    top: 24px;
+}
