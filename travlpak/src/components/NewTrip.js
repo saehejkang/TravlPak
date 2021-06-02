@@ -31,7 +31,7 @@ class NewTrip extends Component {
     percentPlanned: 0,
     people: [],
     participants: [],
-
+    index: 0
   };
 
 
@@ -42,7 +42,7 @@ class NewTrip extends Component {
         let endDate = this.state.endDate
         let percentPlanned = this.state.percentPlanned
         let participants = this.state.people
-
+        let index = this.state.index
         let tripnum = (Math.floor((Math.random() * 100000) + 1)).toString()
 
         console.log("number " + tripnum)
@@ -51,7 +51,6 @@ class NewTrip extends Component {
 
         fire.auth().onAuthStateChanged(function(user) {
           if (user) {
-            
             db.collection("Users").doc(user.uid).update({
               trips: firebase.firestore.FieldValue.arrayUnion(tripnum)
             }).catch((error) => {
@@ -59,6 +58,7 @@ class NewTrip extends Component {
             })
 
             db.collection("trips").doc(tripnum).set({
+              tripNumber: index,
               name: name,
               Destination: destination,
               startDate: startDate,
@@ -88,6 +88,10 @@ class NewTrip extends Component {
         .doc(user.uid)
         .get()
         .then((doc) => {
+          this.setState({
+            index: doc.data().trips.length
+          })
+          console.log(this.state.index)
           this.friendList(doc.data().friends)
       });
     }
