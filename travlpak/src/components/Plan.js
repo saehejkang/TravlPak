@@ -17,9 +17,47 @@ import gradient from "../resources/tabBar-Resources/gradient.svg";
 import invitationIcon from "../resources/Plan-Resources/invitationIcon.svg";
 import calendarIcon from "../resources/Plan-Resources/calendarIcon.svg";
 import plusIcon from "../resources/Plan-Resources/plusIcon.svg";
+import fire from "../firebase.js";
+import firebase from 'firebase/app'
+
+const db = fire.firestore()
 
 class Plan extends Component {
-  state = {};
+  state = {
+    trips: []
+  };
+
+  async componentDidMount() {
+    this.getUserData()
+  }
+
+  getUserData() {
+    let user = fire.auth().currentUser
+    if (user) {
+      db.collection("Users")
+        .doc(user.uid)
+        .get()
+        .then((doc) => {
+          this.getTrips(doc.data().trips)
+      });
+    }
+    else {
+      console.log("no user")
+    }
+  }
+
+  getTrips(array) {
+    console.log(array)
+    for (let i = 0; i < array.length; i++) {
+      db.collection("trips").doc(array[i]).get().then((doc) => {
+        console.log(doc.data)
+        var arr = this.state.trips.concat(doc.data())
+        this.setState({
+          trips: arr
+        })
+      })
+    }
+  }
 
   render() {
     return (
@@ -44,7 +82,62 @@ class Plan extends Component {
           <img className="plan-plus-icon" src={plusIcon} alt="plus icon" />
         </Link>
 
-        <TripList />
+        {this.state.trips.map((trip) => (
+          <Link to="/tripOverview">
+            <div className={"trip-" + trip.tripNumber}>
+            <svg
+              width="342"
+              height="1"
+              viewBox="0 0 342 1"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <line y1="0.5" x2="342" y2="0.5" stroke="#BDCAC2" />
+            </svg>
+
+            <h1 className="display-trip-name">{trip.name}</h1>
+            <h2 className="display-destination-name">{trip.Destination}</h2>
+            <p className="display-dates">{trip.startDate + " - " + trip.endDate}</p>
+
+            <div className="percent-planned">
+              {trip.percentPlanned + "% planned"}
+            </div>
+            <div
+              style={{
+                background:
+                  "linear-gradient(90deg, #2A6049 " +
+                  trip.percentPlanned +
+                  "px, #BDCAC2 " +
+                  trip.percentPlanned +
+                  "px)",
+              }}
+              className="percent-bar"
+            ></div>
+
+            <div className="display-num-participants">
+              <svg
+                width="28"
+                height="28"
+                viewBox="0 0 28 28"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  x="1"
+                  y="1"
+                  width="26"
+                  height="26"
+                  rx="12"
+                  fill="white"
+                  fill-opacity="0.29"
+                  stroke="#BDCAC2"
+                />
+              </svg>
+            </div>
+            <p className="num-participants">{trip.participants.length}</p>
+          </div>
+        </Link>
+      ))};
 
         <img className="gradient" src={gradient} alt="gradient" />
 
@@ -54,7 +147,7 @@ class Plan extends Component {
   }
 }
 export default Plan;
-
+/*
 function TripList() {
   const trips = [
     {
@@ -152,7 +245,7 @@ function TripList() {
     </Link>
   ));
 }
-
+*/
 function Background() {
   return (
     <div>

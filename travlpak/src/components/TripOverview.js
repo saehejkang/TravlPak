@@ -25,6 +25,7 @@ class TripOverview extends Component {
     percentPlanned: 0,
     participants: [],
   };
+  
 
   render() {
     return (
