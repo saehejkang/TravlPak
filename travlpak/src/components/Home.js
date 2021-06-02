@@ -49,23 +49,10 @@ class Home extends Component {
 
   isSignedIn() {
     fire.auth().onAuthStateChanged((user) => {
-      console.log(user);
       if (user) {
-        var db = fire.firestore();
-        console.log(user);
-        db.collection("Users").onSnapshot(
-          (data) => {
-            this.getUserData(user);
-          },
-          (err) => {
-            console.lof(err);
-          }
-        );
-        //call function here and pass in user which is the data
-      } else {
-        console.log("user signed out");
+        this.getUserData(user);
       }
-    });
+    })
   }
 
   getUserData(user) {
@@ -74,7 +61,6 @@ class Home extends Component {
       .doc(user.uid)
       .get()
       .then((doc) => {
-        console.log("data " + doc.data().FirstName);
         this.setState({
           name: doc.data().FirstName,
           aboutMeText: doc.data().bio,
