@@ -52,6 +52,9 @@ class Home extends Component {
       if (user) {
         this.getUserData(user);
       }
+      else {
+        console.log("user not signed in")
+      }
     })
   }
 
