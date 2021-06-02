@@ -96,7 +96,7 @@ class Plan extends Component {
             </svg>
 
             <h1 className="display-trip-name">{trip.name}</h1>
-            <h2 className="display-destination-name">{trip.destination}</h2>
+            <h2 className="display-destination-name">{trip.Destination}</h2>
             <p className="display-dates">{trip.startDate + " - " + trip.endDate}</p>
 
             <div className="percent-planned">
