@@ -16,6 +16,7 @@ import removeIcon from "../resources/NewTrip-Resources/xIcon.svg";
 import addIcon from "../resources/NewTrip-Resources/addIcon.svg";
 import arrowButton from "../resources/CreateProfile-Resources/arrowButton.svg";
 import fire from "../firebase.js";
+import firebase from 'firebase/app'
 import update from 'react-addons-update';
 
 const db = fire.firestore();
@@ -28,7 +29,9 @@ class NewTrip extends Component {
     startDate: "",
     endDate: "",
     percentPlanned: 0,
+    people: [],
     participants: [],
+
   };
 
 
@@ -38,31 +41,37 @@ class NewTrip extends Component {
         let startDate = this.state.startDate
         let endDate = this.state.endDate
         let percentPlanned = this.state.percentPlanned
-        let participants = this.state.participants
+        let participants = this.state.people
 
         let tripnum = (Math.floor((Math.random() * 100000) + 1)).toString()
 
-        console.log(tripnum)
+        console.log("number " + tripnum)
 
         var db = fire.firestore()
 
         fire.auth().onAuthStateChanged(function(user) {
           if (user) {
+            
+            db.collection("Users").doc(user.uid).update({
+              trips: firebase.firestore.FieldValue.arrayUnion(tripnum)
+            }).catch((error) => {
+              console.log(error)
+            })
 
-        db.collection("trips").doc(tripnum).set({
-          name: name,
-          Destination: destination,
-          startDate: startDate,
-          endDate: endDate,
-          percentPlanned: percentPlanned,
-          participants: participants,
-          }).then(() => {
-            console.log("Document successfully updated!")
-          })
-          .catch((error) => {
-             console.log("Error updating documents: ", error)
-          })
-          } else {
+            db.collection("trips").doc(tripnum).set({
+              name: name,
+              Destination: destination,
+              startDate: startDate,
+              endDate: endDate,
+              percentPlanned: percentPlanned,
+              participants: participants,
+              }).then(() => {
+              console.log("Document successfully updated!")
+              })
+            .catch((error) => {
+              console.log("Error updating documents: ", error)
+            })
+         } else {
              console.log("User not logged in")
           }
         });
@@ -130,8 +139,18 @@ class NewTrip extends Component {
     temp.participant = !temp.participant
     arr[index] = temp
     console.log(arr)
+    var people = []
+    for (let i = 0; i < arr.length; i++) {
+      if(arr[i].participant)
+        people.push(arr[i])
+    }
+    for (let j = 0; j < people.length; j++) {
+      if (people[j].participant === false)
+        people.splice(j, 1)
+    }
     this.setState({
-      participants: arr
+      participants: arr,
+      people: people
     })
   }
 
@@ -164,13 +183,13 @@ class NewTrip extends Component {
           className="start-date-input"
           type="date"
           value={this.destination}
-          onChange={(e) => this.setState({ destination: e.target.value })}
+          onChange={(e) => this.setState({ startDate: e.target.value })}
         />
         <input
           className="end-date-input"
           type="date"
           value={this.destination}
-          onChange={(e) => this.setState({ destination: e.target.value })}
+          onChange={(e) => this.setState({ endDate: e.target.value })}
         />
 
         <div className="friends-scrollable">
