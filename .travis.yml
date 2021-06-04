@@ -4,7 +4,7 @@ node_js: "12.16.1"
 cache: npm
 before_install: cd travlpak
 install: npm ci
-before_script: cd travlpak
+before_script:
 script: npm run build
 
 deploy:
