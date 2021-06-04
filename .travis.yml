@@ -2,9 +2,10 @@
 language: node_js
 node_js: "12.16.1"
 cache: npm
-before_install:
-install: install.sh
-script: build.sh
+before_install: cd travlpak
+install: npm ci
+before_script: cd travlpak
+script: npm run build
 
 deploy:
   provider: pages
