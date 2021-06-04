@@ -5,8 +5,8 @@ cache: npm
 before_install:
 install:
   - npm ci
-script:
-  - npm run build
+script: build.sh
+
 deploy:
   provider: pages
   skip-cleanup: true
