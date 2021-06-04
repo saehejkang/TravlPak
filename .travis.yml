@@ -7,6 +7,7 @@ install: npm ci
 before_script:
 script: CI=false npm run build
 
+before_deploy: cd travlpak
 deploy:
   provider: pages
   skip-cleanup: true
