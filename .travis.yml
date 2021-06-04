@@ -5,7 +5,7 @@ cache: npm
 before_install: cd travlpak
 install: npm ci
 before_script:
-script: npm run build
+script: CI=false npm run build
 
 deploy:
   provider: pages
